@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContractManagementService", "ContractManagementService\ContractManagementService.csproj", "{5373D2A9-1B7C-419A-BAD8-DD829676FC9B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContractManagementData", "ContractManagementData\ContractManagementData.csproj", "{89F527C3-E3AE-43F4-A9AA-9DF90274F027}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContractManagementSOAPServcie", "ContractManagementSOAPServcie\ContractManagementSOAPServcie.csproj", "{F377E146-14B0-44B3-8C62-D6F6D7774843}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContractManagementSP", "ContractManagementSP\ContractManagementSP.csproj", "{F271EE5B-53FD-4FB7-87F7-A772C3089AFE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DB", "DB", "{41F64292-C69E-4FB4-84FC-04E583C37FA9}"
+	ProjectSection(SolutionItems) = preProject
+		DB\DB_create_script.sql = DB\DB_create_script.sql
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://danielszego.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ContractManagementData\\ContractManagementData.csproj
+		SccProjectName1 = ContractManagementData
+		SccLocalPath1 = ContractManagementData
+		SccProjectUniqueName2 = ContractManagementService\\ContractManagementService.csproj
+		SccProjectName2 = ContractManagementService
+		SccLocalPath2 = ContractManagementService
+		SccProjectUniqueName3 = ContractManagementSOAPServcie\\ContractManagementSOAPServcie.csproj
+		SccProjectName3 = ContractManagementSOAPServcie
+		SccLocalPath3 = ContractManagementSOAPServcie
+		SccProjectUniqueName4 = ContractManagementSP\\ContractManagementSP.csproj
+		SccProjectName4 = ContractManagementSP
+		SccLocalPath4 = ContractManagementSP
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5373D2A9-1B7C-419A-BAD8-DD829676FC9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5373D2A9-1B7C-419A-BAD8-DD829676FC9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5373D2A9-1B7C-419A-BAD8-DD829676FC9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5373D2A9-1B7C-419A-BAD8-DD829676FC9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89F527C3-E3AE-43F4-A9AA-9DF90274F027}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89F527C3-E3AE-43F4-A9AA-9DF90274F027}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89F527C3-E3AE-43F4-A9AA-9DF90274F027}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89F527C3-E3AE-43F4-A9AA-9DF90274F027}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F377E146-14B0-44B3-8C62-D6F6D7774843}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F377E146-14B0-44B3-8C62-D6F6D7774843}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F377E146-14B0-44B3-8C62-D6F6D7774843}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F377E146-14B0-44B3-8C62-D6F6D7774843}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F271EE5B-53FD-4FB7-87F7-A772C3089AFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F271EE5B-53FD-4FB7-87F7-A772C3089AFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F271EE5B-53FD-4FB7-87F7-A772C3089AFE}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{F271EE5B-53FD-4FB7-87F7-A772C3089AFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F271EE5B-53FD-4FB7-87F7-A772C3089AFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F271EE5B-53FD-4FB7-87F7-A772C3089AFE}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

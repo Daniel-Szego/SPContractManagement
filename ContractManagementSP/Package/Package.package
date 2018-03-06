@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="e172702f-5b67-408e-8569-bcd541f41ffb" solutionId="e172702f-5b67-408e-8569-bcd541f41ffb" resetWebServer="false" sharePointProductVersion="15.0" name="ContractManagementSP" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <assemblies>
+    <customAssembly location="ContractManagementData.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="..\ContractManagementSOAPServcie\bin\ContractManagementData.dll" />
+    <customAssembly location="ContractManagementSOAPServcie.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="..\ContractManagementSOAPServcie\bin\ContractManagementSOAPServcie.dll" />
+  </assemblies>
+  <projectItems>
+    <projectItemReference itemId="46d0c56d-4730-4792-97f4-ac4261976c16" />
+  </projectItems>
+</package>

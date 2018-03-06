@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="AtosContractManagementSOAPServcie.CMService" CodeBehind="CMService.svc.cs" %>

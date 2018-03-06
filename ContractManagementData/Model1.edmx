@@ -1,0 +1,2223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="AgreementModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="AgreementModelStoreContainer">
+          <EntitySet Name="Agreement" EntityType="AgreementModel.Store.Agreement" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Agreement_AccountUnit" EntityType="AgreementModel.Store.Agreement_AccountUnit" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Agreement_CostActual" EntityType="AgreementModel.Store.Agreement_CostActual" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Agreement_Memo" EntityType="AgreementModel.Store.Agreement_Memo" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Agreement_ResponsibleExternal" EntityType="AgreementModel.Store.Agreement_ResponsibleExternal" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Agreement_ResponsibleInternal" EntityType="AgreementModel.Store.Agreement_ResponsibleInternal" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Agreement_SalesActual" EntityType="AgreementModel.Store.Agreement_SalesActual" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Agreement_SalesPlan" EntityType="AgreementModel.Store.Agreement_SalesPlan" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Agreement_Todo" EntityType="AgreementModel.Store.Agreement_Todo" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="AgreementStatus" EntityType="AgreementModel.Store.AgreementStatus" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Contract" EntityType="AgreementModel.Store.Contract" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Contract_Document" EntityType="AgreementModel.Store.Contract_Document" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DocumentType" EntityType="AgreementModel.Store.DocumentType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ExpiryCategory" EntityType="AgreementModel.Store.ExpiryCategory" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ExternalPerson" EntityType="AgreementModel.Store.ExternalPerson" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ExternalRole" EntityType="AgreementModel.Store.ExternalRole" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Import_SalesActual" EntityType="AgreementModel.Store.Import_SalesActual" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ImportBulk" EntityType="AgreementModel.Store.ImportBulk" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ImportOption" EntityType="AgreementModel.Store.ImportOption" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="InternalPerson" EntityType="AgreementModel.Store.InternalPerson" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="InternalRole" EntityType="AgreementModel.Store.InternalRole" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MemoType" EntityType="AgreementModel.Store.MemoType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Organisation" EntityType="AgreementModel.Store.Organisation" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RevenueDimension" EntityType="AgreementModel.Store.RevenueDimension" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RevenueTrend" EntityType="AgreementModel.Store.RevenueTrend" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Sector" EntityType="AgreementModel.Store.Sector" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TodoFlag" EntityType="AgreementModel.Store.TodoFlag" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TodoPriority" EntityType="AgreementModel.Store.TodoPriority" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TodoType" EntityType="AgreementModel.Store.TodoType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TowerDelivery" EntityType="AgreementModel.Store.TowerDelivery" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TowerService" EntityType="AgreementModel.Store.TowerService" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="vwImportBulk" EntityType="AgreementModel.Store.vwImportBulk" store:Type="Views" store:Schema="dbo" store:Name="vwImportBulk">
+            <DefiningQuery>SELECT 
+      [vwImportBulk].[PSPElement] AS [PSPElement], 
+      [vwImportBulk].[RefBelegnummer] AS [RefBelegnummer], 
+      [vwImportBulk].[Buchungsperiode] AS [Buchungsperiode], 
+      [vwImportBulk].[RefBelegtyp] AS [RefBelegtyp], 
+      [vwImportBulk].[Profitcenter] AS [Profitcenter], 
+      [vwImportBulk].[Kontonummer] AS [Kontonummer], 
+      [vwImportBulk].[Bezeichnung] AS [Bezeichnung], 
+      [vwImportBulk].[Umsatz] AS [Umsatz], 
+      [vwImportBulk].[Waehrung] AS [Waehrung], 
+      [vwImportBulk].[WBSElementText] AS [WBSElementText], 
+      [vwImportBulk].[Material] AS [Material], 
+      [vwImportBulk].[Text] AS [Text], 
+      [vwImportBulk].[Debitor] AS [Debitor]
+      FROM [dbo].[vwImportBulk] AS [vwImportBulk]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="fky_Agreement_AccountUnit_Agreement" Association="AgreementModel.Store.fky_Agreement_AccountUnit_Agreement">
+            <End Role="Agreement" EntitySet="Agreement" />
+            <End Role="Agreement_AccountUnit" EntitySet="Agreement_AccountUnit" />
+          </AssociationSet>
+          <AssociationSet Name="fky_Agreement_AgreementStatus" Association="AgreementModel.Store.fky_Agreement_AgreementStatus">
+            <End Role="AgreementStatus" EntitySet="AgreementStatus" />
+            <End Role="Agreement" EntitySet="Agreement" />
+          </AssociationSet>
+          <AssociationSet Name="fky_Agreement_Contract" Association="AgreementModel.Store.fky_Agreement_Contract">
+            <End Role="Contract" EntitySet="Contract" />
+            <End Role="Agreement" EntitySet="Agreement" />
+          </AssociationSet>
+          <AssociationSet Name="fky_Agreement_CostActual_Agreement" Association="AgreementModel.Store.fky_Agreement_CostActual_Agreement">
+            <End Role="Agreement" EntitySet="Agreement" />
+            <End Role="Agreement_CostActual" EntitySet="Agreement_CostActual" />
+          </AssociationSet>
+          <AssociationSet Name="fky_Agreement_Memo_Agreement" Association="AgreementModel.Store.fky_Agreement_Memo_Agreement">
+            <End Role="Agreement" EntitySet="Agreement" />
+            <End Role="Agreement_Memo" EntitySet="Agreement_Memo" />
+          </AssociationSet>
+          <AssociationSet Name="fky_Agreement_Memo_InternalPerson" Association="AgreementModel.Store.fky_Agreement_Memo_InternalPerson">
+            <End Role="InternalPerson" EntitySet="InternalPerson" />
+            <End Role="Agreement_Memo" EntitySet="Agreement_Memo" />
+          </AssociationSet>
+          <AssociationSet Name="fky_Agreement_Memo_MemoType" Association="AgreementModel.Store.fky_Agreement_Memo_MemoType">
+            <End Role="MemoType" EntitySet="MemoType" />
+            <End Role="Agreement_Memo" EntitySet="Agreement_Memo" />
+          </AssociationSet>
+          <AssociationSet Name="fky_Agreement_Organisation" Association="AgreementModel.Store.fky_Agreement_Organisation">
+            <End Role="Organisation" EntitySet="Organisation" />
+            <End Role="Agreement" EntitySet="Agreement" />
+          </AssociationSet>
+          <AssociationSet Name="fky_Agreement_ResponsibleExternal_Agreement" Association="AgreementModel.Store.fky_Agreement_ResponsibleExternal_Agreement">
+            <End Role="Agreement" EntitySet="Agreement" />
+            <End Role="Agreement_ResponsibleExternal" EntitySet="Agreement_ResponsibleExternal" />
+          </AssociationSet>
+          <AssociationSet Name="fky_Agreement_ResponsibleExternal_ExternalPerson" Association="AgreementModel.Store.fky_Agreement_ResponsibleExternal_ExternalPerson">
+            <End Role="ExternalPerson" EntitySet="ExternalPerson" />
+            <End Role="Agreement_ResponsibleExternal" EntitySet="Agreement_ResponsibleExternal" />
+          </AssociationSet>
+          <AssociationSet Name="fky_Agreement_ResponsibleExternal_ExternalRole" Association="AgreementModel.Store.fky_Agreement_ResponsibleExternal_ExternalRole">
+            <End Role="ExternalRole" EntitySet="ExternalRole" />
+            <End Role="Agreement_ResponsibleExternal" EntitySet="Agreement_ResponsibleExternal" />
+          </AssociationSet>
+          <AssociationSet Name="fky_Agreement_ResponsibleInternal_Agreement" Association="AgreementModel.Store.fky_Agreement_ResponsibleInternal_Agreement">
+            <End Role="Agreement" EntitySet="Agreement" />
+            <End Role="Agreement_ResponsibleInternal" EntitySet="Agreement_ResponsibleInternal" />
+          </AssociationSet>
+          <AssociationSet Name="fky_Agreement_ResponsibleInternal_InternalPerson" Association="AgreementModel.Store.fky_Agreement_ResponsibleInternal_InternalPerson">
+            <End Role="InternalPerson" EntitySet="InternalPerson" />
+            <End Role="Agreement_ResponsibleInternal" EntitySet="Agreement_ResponsibleInternal" />
+          </AssociationSet>
+          <AssociationSet Name="fky_Agreement_ResponsibleInternal_InternalRole" Association="AgreementModel.Store.fky_Agreement_ResponsibleInternal_InternalRole">
+            <End Role="InternalRole" EntitySet="InternalRole" />
+            <End Role="Agreement_ResponsibleInternal" EntitySet="Agreement_ResponsibleInternal" />
+          </AssociationSet>
+          <AssociationSet Name="fky_Agreement_RevenueDimension" Association="AgreementModel.Store.fky_Agreement_RevenueDimension">
+            <End Role="RevenueDimension" EntitySet="RevenueDimension" />
+            <End Role="Agreement" EntitySet="Agreement" />
+          </AssociationSet>
+          <AssociationSet Name="fky_Agreement_RevenueTrend" Association="AgreementModel.Store.fky_Agreement_RevenueTrend">
+            <End Role="RevenueTrend" EntitySet="RevenueTrend" />
+            <End Role="Agreement" EntitySet="Agreement" />
+          </AssociationSet>
+          <AssociationSet Name="fky_Agreement_SalesActual_Agreement" Association="AgreementModel.Store.fky_Agreement_SalesActual_Agreement">
+            <End Role="Agreement" EntitySet="Agreement" />
+            <End Role="Agreement_SalesActual" EntitySet="Agreement_SalesActual" />
+          </AssociationSet>
+          <AssociationSet Name="fky_Agreement_SalesActual_ExpiryCategory" Association="AgreementModel.Store.fky_Agreement_SalesActual_ExpiryCategory">
+            <End Role="ExpiryCategory" EntitySet="ExpiryCategory" />
+            <End Role="Agreement_SalesActual" EntitySet="Agreement_SalesActual" />
+          </AssociationSet>
+          <AssociationSet Name="fky_Agreement_SalesPlan_Agreement" Association="AgreementModel.Store.fky_Agreement_SalesPlan_Agreement">
+            <End Role="Agreement" EntitySet="Agreement" />
+            <End Role="Agreement_SalesPlan" EntitySet="Agreement_SalesPlan" />
+          </AssociationSet>
+          <AssociationSet Name="fky_Agreement_Sector" Association="AgreementModel.Store.fky_Agreement_Sector">
+            <End Role="Sector" EntitySet="Sector" />
+            <End Role="Agreement" EntitySet="Agreement" />
+          </AssociationSet>
+          <AssociationSet Name="fky_Agreement_Todo_Agreement" Association="AgreementModel.Store.fky_Agreement_Todo_Agreement">
+            <End Role="Agreement" EntitySet="Agreement" />
+            <End Role="Agreement_Todo" EntitySet="Agreement_Todo" />
+          </AssociationSet>
+          <AssociationSet Name="fky_Agreement_Todo_InternalPerson_Assigned" Association="AgreementModel.Store.fky_Agreement_Todo_InternalPerson_Assigned">
+            <End Role="InternalPerson" EntitySet="InternalPerson" />
+            <End Role="Agreement_Todo" EntitySet="Agreement_Todo" />
+          </AssociationSet>
+          <AssociationSet Name="fky_Agreement_Todo_InternalPerson_Created" Association="AgreementModel.Store.fky_Agreement_Todo_InternalPerson_Created">
+            <End Role="InternalPerson" EntitySet="InternalPerson" />
+            <End Role="Agreement_Todo" EntitySet="Agreement_Todo" />
+          </AssociationSet>
+          <AssociationSet Name="fky_Agreement_Todo_TodoFlag" Association="AgreementModel.Store.fky_Agreement_Todo_TodoFlag">
+            <End Role="TodoFlag" EntitySet="TodoFlag" />
+            <End Role="Agreement_Todo" EntitySet="Agreement_Todo" />
+          </AssociationSet>
+          <AssociationSet Name="fky_Agreement_Todo_TodoPriority" Association="AgreementModel.Store.fky_Agreement_Todo_TodoPriority">
+            <End Role="TodoPriority" EntitySet="TodoPriority" />
+            <End Role="Agreement_Todo" EntitySet="Agreement_Todo" />
+          </AssociationSet>
+          <AssociationSet Name="fky_Agreement_Todo_TodoType" Association="AgreementModel.Store.fky_Agreement_Todo_TodoType">
+            <End Role="TodoType" EntitySet="TodoType" />
+            <End Role="Agreement_Todo" EntitySet="Agreement_Todo" />
+          </AssociationSet>
+          <AssociationSet Name="fky_Agreement_TowerDelivery" Association="AgreementModel.Store.fky_Agreement_TowerDelivery">
+            <End Role="TowerDelivery" EntitySet="TowerDelivery" />
+            <End Role="Agreement" EntitySet="Agreement" />
+          </AssociationSet>
+          <AssociationSet Name="fky_Agreement_TowerService" Association="AgreementModel.Store.fky_Agreement_TowerService">
+            <End Role="TowerService" EntitySet="TowerService" />
+            <End Role="Agreement" EntitySet="Agreement" />
+          </AssociationSet>
+          <AssociationSet Name="fky_Contract_Document_Contract" Association="AgreementModel.Store.fky_Contract_Document_Contract">
+            <End Role="Contract" EntitySet="Contract" />
+            <End Role="Contract_Document" EntitySet="Contract_Document" />
+          </AssociationSet>
+          <AssociationSet Name="fky_Contract_Document_DocumentType" Association="AgreementModel.Store.fky_Contract_Document_DocumentType">
+            <End Role="DocumentType" EntitySet="DocumentType" />
+            <End Role="Contract_Document" EntitySet="Contract_Document" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Agreement">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AgreementNumber" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ContractNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="SAPContractNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="Country" Type="nvarchar" MaxLength="50" />
+          <Property Name="Debitor" Type="nvarchar" MaxLength="200" />
+          <Property Name="OrderNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="Organisation_id" Type="int" />
+          <Property Name="Sector_id" Type="int" />
+          <Property Name="TowerService_id" Type="int" />
+          <Property Name="TowerDelivery_id" Type="int" />
+          <Property Name="AgreementStatus_id" Type="int" />
+          <Property Name="AmountPlanPerMonth" Type="decimal" Precision="19" Scale="5" />
+          <Property Name="RevenueTrend_id" Type="int" />
+          <Property Name="RevenueDimension_id" Type="int" />
+        </EntityType>
+        <EntityType Name="Agreement_AccountUnit">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Agreement_id" Type="int" Nullable="false" />
+          <Property Name="AccountUnit" Type="int" />
+        </EntityType>
+        <EntityType Name="Agreement_CostActual">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Agreement_id" Type="int" Nullable="false" />
+          <Property Name="MonthActivity" Type="tinyint" Nullable="false" />
+          <Property Name="MonthInvoice" Type="tinyint" Nullable="false" />
+          <Property Name="AmountCost" Type="decimal" Nullable="false" Precision="19" Scale="5" />
+          <Property Name="BookingText" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="Agreement_Memo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Agreement_id" Type="int" Nullable="false" />
+          <Property Name="MemoTimestamp" Type="datetime" Nullable="false" />
+          <Property Name="MemoText" Type="nvarchar" Nullable="false" MaxLength="2000" />
+          <Property Name="MemoType_id" Type="int" Nullable="false" />
+          <Property Name="InternalPerson_id" Type="int" />
+        </EntityType>
+        <EntityType Name="Agreement_ResponsibleExternal">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Agreement_id" Type="int" Nullable="false" />
+          <Property Name="ExternalRole_id" Type="int" Nullable="false" />
+          <Property Name="ExternalPerson_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Agreement_ResponsibleInternal">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Agreement_id" Type="int" Nullable="false" />
+          <Property Name="InternalRole_id" Type="int" Nullable="false" />
+          <Property Name="InternalPerson_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Agreement_SalesActual">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Agreement_id" Type="int" Nullable="false" />
+          <Property Name="InvoiceNumber" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="InvoiceDate" Type="datetime" Nullable="false" />
+          <Property Name="InvoiceText" Type="nvarchar" MaxLength="2000" />
+          <Property Name="MonthActivity" Type="tinyint" Nullable="false" />
+          <Property Name="MonthInvoice" Type="tinyint" Nullable="false" />
+          <Property Name="AmountInvoice" Type="decimal" Nullable="false" Precision="19" Scale="5" />
+          <Property Name="ExpiryDate" Type="datetime" Nullable="false" />
+          <Property Name="AmountOutstanding" Type="decimal" Precision="19" Scale="5" />
+          <Property Name="ExpirySinceDays" Type="int" />
+          <Property Name="ExpiryCategory_id" Type="int" />
+        </EntityType>
+        <EntityType Name="Agreement_SalesPlan">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Agreement_id" Type="int" Nullable="false" />
+          <Property Name="MonthActivity" Type="tinyint" Nullable="false" />
+          <Property Name="MonthInvoice" Type="tinyint" Nullable="false" />
+          <Property Name="AmountPlan" Type="decimal" Nullable="false" Precision="19" Scale="5" />
+        </EntityType>
+        <EntityType Name="Agreement_Todo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Agreement_id" Type="int" Nullable="false" />
+          <Property Name="TodoType_id" Type="int" Nullable="false" />
+          <Property Name="TodoFlag_id" Type="int" Nullable="false" />
+          <Property Name="TodoPriority_id" Type="int" Nullable="false" />
+          <Property Name="TodoComment" Type="nvarchar" Nullable="false" MaxLength="2000" />
+          <Property Name="Created_InternalPerson_id" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="Assigned_InternalPerson_id" Type="int" Nullable="false" />
+          <Property Name="ExpriyDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AgreementStatus">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Caption" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="Contract">
+          <Key>
+            <PropertyRef Name="ContractNumber" />
+          </Key>
+          <Property Name="ContractNumber" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ContractName" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="Contract_Document">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Contract_Number" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Agreement_id" Type="int" />
+          <Property Name="DocumentType_id" Type="int" Nullable="false" />
+          <Property Name="DocumentFileBinary" Type="varbinary(max)" />
+          <Property Name="DocumentKeyword" Type="nvarchar" MaxLength="2000" />
+          <Property Name="DocumentFilePath" Type="nvarchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="DocumentType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Caption" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="ExpiryCategory">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Caption" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="ExternalPerson">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UniqueName" Type="nvarchar" MaxLength="200" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ExternalRole">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Caption" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="Import_SalesActual">
+          <Key>
+            <PropertyRef Name="GUID" />
+          </Key>
+          <Property Name="GUID" Type="nvarchar" Nullable="false" MaxLength="38" />
+          <Property Name="ImportResult" Type="nvarchar" MaxLength="25" />
+          <Property Name="Agreement_id" Type="int" />
+          <Property Name="PSPElement" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="RefBelegnummer" Type="nvarchar" Nullable="false" MaxLength="15" />
+          <Property Name="Buchungsperiode" Type="int" />
+          <Property Name="RefBelegtyp" Type="nvarchar" MaxLength="5" />
+          <Property Name="Profitcenter" Type="nvarchar" MaxLength="20" />
+          <Property Name="Kontonummer" Type="nvarchar" MaxLength="15" />
+          <Property Name="Bezeichnung" Type="nvarchar" MaxLength="400" />
+          <Property Name="Umsatz" Type="nvarchar" MaxLength="15" />
+          <Property Name="Waehrung" Type="nvarchar" MaxLength="5" />
+          <Property Name="WBSElementText" Type="nvarchar" MaxLength="400" />
+          <Property Name="Material" Type="nvarchar" MaxLength="400" />
+          <Property Name="Text" Type="nvarchar" MaxLength="400" />
+          <Property Name="Debitor" Type="nvarchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="ImportBulk">
+          <Key>
+            <PropertyRef Name="RefBelegnummer" />
+            <PropertyRef Name="RefBelegzeile" />
+            <PropertyRef Name="PSPElement" />
+          </Key>
+          <Property Name="RefBelegtyp" Type="nvarchar" MaxLength="5" />
+          <Property Name="RefBelegnummer" Type="nvarchar" Nullable="false" MaxLength="15" />
+          <Property Name="RefBelegzeile" Type="int" Nullable="false" />
+          <Property Name="Buchungsperiode" Type="int" Nullable="false" />
+          <Property Name="Profitcenter" Type="nvarchar" MaxLength="20" />
+          <Property Name="Kontonummer" Type="nvarchar" MaxLength="15" />
+          <Property Name="Bezeichnung" Type="nvarchar" MaxLength="400" />
+          <Property Name="InProfitCenterHauswaehrung" Type="nvarchar" MaxLength="15" />
+          <Property Name="Waehrung" Type="nvarchar" MaxLength="5" />
+          <Property Name="PSPElement" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="WBSElementText" Type="nvarchar" MaxLength="400" />
+          <Property Name="Material" Type="nvarchar" MaxLength="400" />
+          <Property Name="Text" Type="nvarchar" MaxLength="400" />
+          <Property Name="Debitor" Type="nvarchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="ImportOption">
+          <Key>
+            <PropertyRef Name="ImportProfile" />
+          </Key>
+          <Property Name="ImportProfile" Type="nvarchar" Nullable="false" MaxLength="38" />
+          <Property Name="ImportFilePath" Type="nvarchar" Nullable="false" MaxLength="2000" />
+          <Property Name="ImportFilePattern" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="FieldTerminator" Type="nvarchar" Nullable="false" MaxLength="3" />
+          <Property Name="RowTerminator" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="ServerName" Type="nvarchar" Nullable="false" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="InternalPerson">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UniqueName" Type="nvarchar" MaxLength="200" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="InternalRole">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Caption" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="MemoType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Caption" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="Organisation">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Caption" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="RevenueDimension">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Caption" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="RevenueTrend">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Caption" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="Sector">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Caption" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="TodoFlag">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Caption" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="TodoPriority">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Caption" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="TodoType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Caption" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="TowerDelivery">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Caption" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="TowerService">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Caption" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Agreement.dbo.vwImportBulk' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vwImportBulk">
+          <Key>
+            <PropertyRef Name="PSPElement" />
+            <PropertyRef Name="RefBelegnummer" />
+            <PropertyRef Name="Buchungsperiode" />
+          </Key>
+          <Property Name="PSPElement" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="RefBelegnummer" Type="nvarchar" Nullable="false" MaxLength="15" />
+          <Property Name="Buchungsperiode" Type="int" Nullable="false" />
+          <Property Name="RefBelegtyp" Type="nvarchar" MaxLength="5" />
+          <Property Name="Profitcenter" Type="nvarchar" MaxLength="20" />
+          <Property Name="Kontonummer" Type="nvarchar" MaxLength="15" />
+          <Property Name="Bezeichnung" Type="nvarchar" MaxLength="400" />
+          <Property Name="Umsatz" Type="decimal" Precision="38" Scale="2" />
+          <Property Name="Waehrung" Type="nvarchar" MaxLength="5" />
+          <Property Name="WBSElementText" Type="nvarchar" MaxLength="400" />
+          <Property Name="Material" Type="int" />
+          <Property Name="Text" Type="nvarchar" MaxLength="400" />
+          <Property Name="Debitor" Type="nvarchar" MaxLength="15" />
+        </EntityType>
+        <Association Name="fky_Agreement_AccountUnit_Agreement">
+          <End Role="Agreement" Type="AgreementModel.Store.Agreement" Multiplicity="1" />
+          <End Role="Agreement_AccountUnit" Type="AgreementModel.Store.Agreement_AccountUnit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Agreement">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agreement_AccountUnit">
+              <PropertyRef Name="Agreement_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fky_Agreement_AgreementStatus">
+          <End Role="AgreementStatus" Type="AgreementModel.Store.AgreementStatus" Multiplicity="0..1" />
+          <End Role="Agreement" Type="AgreementModel.Store.Agreement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AgreementStatus">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agreement">
+              <PropertyRef Name="AgreementStatus_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fky_Agreement_Contract">
+          <End Role="Contract" Type="AgreementModel.Store.Contract" Multiplicity="0..1" />
+          <End Role="Agreement" Type="AgreementModel.Store.Agreement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contract">
+              <PropertyRef Name="ContractNumber" />
+            </Principal>
+            <Dependent Role="Agreement">
+              <PropertyRef Name="ContractNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fky_Agreement_CostActual_Agreement">
+          <End Role="Agreement" Type="AgreementModel.Store.Agreement" Multiplicity="1" />
+          <End Role="Agreement_CostActual" Type="AgreementModel.Store.Agreement_CostActual" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Agreement">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agreement_CostActual">
+              <PropertyRef Name="Agreement_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fky_Agreement_Memo_Agreement">
+          <End Role="Agreement" Type="AgreementModel.Store.Agreement" Multiplicity="1" />
+          <End Role="Agreement_Memo" Type="AgreementModel.Store.Agreement_Memo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Agreement">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agreement_Memo">
+              <PropertyRef Name="Agreement_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fky_Agreement_Memo_InternalPerson">
+          <End Role="InternalPerson" Type="AgreementModel.Store.InternalPerson" Multiplicity="0..1" />
+          <End Role="Agreement_Memo" Type="AgreementModel.Store.Agreement_Memo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="InternalPerson">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agreement_Memo">
+              <PropertyRef Name="InternalPerson_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fky_Agreement_Memo_MemoType">
+          <End Role="MemoType" Type="AgreementModel.Store.MemoType" Multiplicity="1" />
+          <End Role="Agreement_Memo" Type="AgreementModel.Store.Agreement_Memo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MemoType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agreement_Memo">
+              <PropertyRef Name="MemoType_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fky_Agreement_Organisation">
+          <End Role="Organisation" Type="AgreementModel.Store.Organisation" Multiplicity="0..1" />
+          <End Role="Agreement" Type="AgreementModel.Store.Agreement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Organisation">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agreement">
+              <PropertyRef Name="Organisation_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fky_Agreement_ResponsibleExternal_Agreement">
+          <End Role="Agreement" Type="AgreementModel.Store.Agreement" Multiplicity="1" />
+          <End Role="Agreement_ResponsibleExternal" Type="AgreementModel.Store.Agreement_ResponsibleExternal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Agreement">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agreement_ResponsibleExternal">
+              <PropertyRef Name="Agreement_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fky_Agreement_ResponsibleExternal_ExternalPerson">
+          <End Role="ExternalPerson" Type="AgreementModel.Store.ExternalPerson" Multiplicity="1" />
+          <End Role="Agreement_ResponsibleExternal" Type="AgreementModel.Store.Agreement_ResponsibleExternal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ExternalPerson">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agreement_ResponsibleExternal">
+              <PropertyRef Name="ExternalPerson_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fky_Agreement_ResponsibleExternal_ExternalRole">
+          <End Role="ExternalRole" Type="AgreementModel.Store.ExternalRole" Multiplicity="1" />
+          <End Role="Agreement_ResponsibleExternal" Type="AgreementModel.Store.Agreement_ResponsibleExternal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ExternalRole">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agreement_ResponsibleExternal">
+              <PropertyRef Name="ExternalRole_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fky_Agreement_ResponsibleInternal_Agreement">
+          <End Role="Agreement" Type="AgreementModel.Store.Agreement" Multiplicity="1" />
+          <End Role="Agreement_ResponsibleInternal" Type="AgreementModel.Store.Agreement_ResponsibleInternal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Agreement">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agreement_ResponsibleInternal">
+              <PropertyRef Name="Agreement_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fky_Agreement_ResponsibleInternal_InternalPerson">
+          <End Role="InternalPerson" Type="AgreementModel.Store.InternalPerson" Multiplicity="1" />
+          <End Role="Agreement_ResponsibleInternal" Type="AgreementModel.Store.Agreement_ResponsibleInternal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="InternalPerson">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agreement_ResponsibleInternal">
+              <PropertyRef Name="InternalPerson_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fky_Agreement_ResponsibleInternal_InternalRole">
+          <End Role="InternalRole" Type="AgreementModel.Store.InternalRole" Multiplicity="1" />
+          <End Role="Agreement_ResponsibleInternal" Type="AgreementModel.Store.Agreement_ResponsibleInternal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="InternalRole">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agreement_ResponsibleInternal">
+              <PropertyRef Name="InternalRole_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fky_Agreement_RevenueDimension">
+          <End Role="RevenueDimension" Type="AgreementModel.Store.RevenueDimension" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Agreement" Type="AgreementModel.Store.Agreement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RevenueDimension">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agreement">
+              <PropertyRef Name="RevenueDimension_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fky_Agreement_RevenueTrend">
+          <End Role="RevenueTrend" Type="AgreementModel.Store.RevenueTrend" Multiplicity="0..1" />
+          <End Role="Agreement" Type="AgreementModel.Store.Agreement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RevenueTrend">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agreement">
+              <PropertyRef Name="RevenueTrend_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fky_Agreement_SalesActual_Agreement">
+          <End Role="Agreement" Type="AgreementModel.Store.Agreement" Multiplicity="1" />
+          <End Role="Agreement_SalesActual" Type="AgreementModel.Store.Agreement_SalesActual" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Agreement">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agreement_SalesActual">
+              <PropertyRef Name="Agreement_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fky_Agreement_SalesActual_ExpiryCategory">
+          <End Role="ExpiryCategory" Type="AgreementModel.Store.ExpiryCategory" Multiplicity="0..1" />
+          <End Role="Agreement_SalesActual" Type="AgreementModel.Store.Agreement_SalesActual" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ExpiryCategory">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agreement_SalesActual">
+              <PropertyRef Name="ExpiryCategory_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fky_Agreement_SalesPlan_Agreement">
+          <End Role="Agreement" Type="AgreementModel.Store.Agreement" Multiplicity="1" />
+          <End Role="Agreement_SalesPlan" Type="AgreementModel.Store.Agreement_SalesPlan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Agreement">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agreement_SalesPlan">
+              <PropertyRef Name="Agreement_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fky_Agreement_Sector">
+          <End Role="Sector" Type="AgreementModel.Store.Sector" Multiplicity="0..1" />
+          <End Role="Agreement" Type="AgreementModel.Store.Agreement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sector">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agreement">
+              <PropertyRef Name="Sector_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fky_Agreement_Todo_Agreement">
+          <End Role="Agreement" Type="AgreementModel.Store.Agreement" Multiplicity="1" />
+          <End Role="Agreement_Todo" Type="AgreementModel.Store.Agreement_Todo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Agreement">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agreement_Todo">
+              <PropertyRef Name="Agreement_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fky_Agreement_Todo_InternalPerson_Assigned">
+          <End Role="InternalPerson" Type="AgreementModel.Store.InternalPerson" Multiplicity="1" />
+          <End Role="Agreement_Todo" Type="AgreementModel.Store.Agreement_Todo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="InternalPerson">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agreement_Todo">
+              <PropertyRef Name="Assigned_InternalPerson_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fky_Agreement_Todo_InternalPerson_Created">
+          <End Role="InternalPerson" Type="AgreementModel.Store.InternalPerson" Multiplicity="1" />
+          <End Role="Agreement_Todo" Type="AgreementModel.Store.Agreement_Todo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="InternalPerson">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agreement_Todo">
+              <PropertyRef Name="Created_InternalPerson_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fky_Agreement_Todo_TodoFlag">
+          <End Role="TodoFlag" Type="AgreementModel.Store.TodoFlag" Multiplicity="1" />
+          <End Role="Agreement_Todo" Type="AgreementModel.Store.Agreement_Todo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TodoFlag">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agreement_Todo">
+              <PropertyRef Name="TodoFlag_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fky_Agreement_Todo_TodoPriority">
+          <End Role="TodoPriority" Type="AgreementModel.Store.TodoPriority" Multiplicity="1" />
+          <End Role="Agreement_Todo" Type="AgreementModel.Store.Agreement_Todo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TodoPriority">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agreement_Todo">
+              <PropertyRef Name="TodoPriority_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fky_Agreement_Todo_TodoType">
+          <End Role="TodoType" Type="AgreementModel.Store.TodoType" Multiplicity="1" />
+          <End Role="Agreement_Todo" Type="AgreementModel.Store.Agreement_Todo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TodoType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agreement_Todo">
+              <PropertyRef Name="TodoType_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fky_Agreement_TowerDelivery">
+          <End Role="TowerDelivery" Type="AgreementModel.Store.TowerDelivery" Multiplicity="0..1" />
+          <End Role="Agreement" Type="AgreementModel.Store.Agreement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TowerDelivery">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agreement">
+              <PropertyRef Name="TowerDelivery_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fky_Agreement_TowerService">
+          <End Role="TowerService" Type="AgreementModel.Store.TowerService" Multiplicity="0..1" />
+          <End Role="Agreement" Type="AgreementModel.Store.Agreement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TowerService">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agreement">
+              <PropertyRef Name="TowerService_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fky_Contract_Document_Contract">
+          <End Role="Contract" Type="AgreementModel.Store.Contract" Multiplicity="1" />
+          <End Role="Contract_Document" Type="AgreementModel.Store.Contract_Document" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contract">
+              <PropertyRef Name="ContractNumber" />
+            </Principal>
+            <Dependent Role="Contract_Document">
+              <PropertyRef Name="Contract_Number" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fky_Contract_Document_DocumentType">
+          <End Role="DocumentType" Type="AgreementModel.Store.DocumentType" Multiplicity="1" />
+          <End Role="Contract_Document" Type="AgreementModel.Store.Contract_Document" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DocumentType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Contract_Document">
+              <PropertyRef Name="DocumentType_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AgreementModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="AgreementEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Contract" EntityType="AgreementModel.Contract" />
+          <EntitySet Name="DocumentType" EntityType="AgreementModel.DocumentType" />
+          <EntitySet Name="Contract_Document" EntityType="AgreementModel.Contract_Document" />
+          <AssociationSet Name="fky_Contract_Document_Contract" Association="AgreementModel.fky_Contract_Document_Contract">
+            <End Role="Contract" EntitySet="Contract" />
+            <End Role="Contract_Document" EntitySet="Contract_Document" />
+          </AssociationSet>
+          <AssociationSet Name="fky_Contract_Document_DocumentType" Association="AgreementModel.fky_Contract_Document_DocumentType">
+            <End Role="DocumentType" EntitySet="DocumentType" />
+            <End Role="Contract_Document" EntitySet="Contract_Document" />
+          </AssociationSet>
+          <EntitySet Name="Agreement" EntityType="AgreementModel.Agreement" />
+          <AssociationSet Name="fky_Agreement_Contract" Association="AgreementModel.fky_Agreement_Contract">
+            <End Role="Contract" EntitySet="Contract" />
+            <End Role="Agreement" EntitySet="Agreement" />
+          </AssociationSet>
+          <EntitySet Name="Agreement_AccountUnit" EntityType="AgreementModel.Agreement_AccountUnit" />
+          <EntitySet Name="Agreement_CostActual" EntityType="AgreementModel.Agreement_CostActual" />
+          <EntitySet Name="Agreement_Memo" EntityType="AgreementModel.Agreement_Memo" />
+          <EntitySet Name="Agreement_ResponsibleExternal" EntityType="AgreementModel.Agreement_ResponsibleExternal" />
+          <EntitySet Name="Agreement_ResponsibleInternal" EntityType="AgreementModel.Agreement_ResponsibleInternal" />
+          <EntitySet Name="Agreement_SalesActual" EntityType="AgreementModel.Agreement_SalesActual" />
+          <EntitySet Name="Agreement_SalesPlan" EntityType="AgreementModel.Agreement_SalesPlan" />
+          <EntitySet Name="Agreement_Todo" EntityType="AgreementModel.Agreement_Todo" />
+          <EntitySet Name="AgreementStatus" EntityType="AgreementModel.AgreementStatus" />
+          <EntitySet Name="ExpiryCategory" EntityType="AgreementModel.ExpiryCategory" />
+          <EntitySet Name="ExternalPerson" EntityType="AgreementModel.ExternalPerson" />
+          <EntitySet Name="ExternalRole" EntityType="AgreementModel.ExternalRole" />
+          <EntitySet Name="Import_SalesActual" EntityType="AgreementModel.Import_SalesActual" />
+          <EntitySet Name="InternalPerson" EntityType="AgreementModel.InternalPerson" />
+          <EntitySet Name="InternalRole" EntityType="AgreementModel.InternalRole" />
+          <EntitySet Name="MemoType" EntityType="AgreementModel.MemoType" />
+          <EntitySet Name="Organisation" EntityType="AgreementModel.Organisation" />
+          <EntitySet Name="RevenueDimension" EntityType="AgreementModel.RevenueDimension" />
+          <EntitySet Name="RevenueTrend" EntityType="AgreementModel.RevenueTrend" />
+          <EntitySet Name="Sector" EntityType="AgreementModel.Sector" />
+          <EntitySet Name="TodoFlag" EntityType="AgreementModel.TodoFlag" />
+          <EntitySet Name="TodoPriority" EntityType="AgreementModel.TodoPriority" />
+          <EntitySet Name="TodoType" EntityType="AgreementModel.TodoType" />
+          <EntitySet Name="TowerDelivery" EntityType="AgreementModel.TowerDelivery" />
+          <EntitySet Name="TowerService" EntityType="AgreementModel.TowerService" />
+          <EntitySet Name="vwImportBulk" EntityType="AgreementModel.vwImportBulk" />
+          <AssociationSet Name="fky_Agreement_AccountUnit_Agreement" Association="AgreementModel.fky_Agreement_AccountUnit_Agreement">
+            <End Role="Agreement" EntitySet="Agreement" />
+            <End Role="Agreement_AccountUnit" EntitySet="Agreement_AccountUnit" />
+          </AssociationSet>
+          <AssociationSet Name="fky_Agreement_AgreementStatus" Association="AgreementModel.fky_Agreement_AgreementStatus">
+            <End Role="AgreementStatus" EntitySet="AgreementStatus" />
+            <End Role="Agreement" EntitySet="Agreement" />
+          </AssociationSet>
+          <AssociationSet Name="fky_Agreement_CostActual_Agreement" Association="AgreementModel.fky_Agreement_CostActual_Agreement">
+            <End Role="Agreement" EntitySet="Agreement" />
+            <End Role="Agreement_CostActual" EntitySet="Agreement_CostActual" />
+          </AssociationSet>
+          <AssociationSet Name="fky_Agreement_Memo_Agreement" Association="AgreementModel.fky_Agreement_Memo_Agreement">
+            <End Role="Agreement" EntitySet="Agreement" />
+            <End Role="Agreement_Memo" EntitySet="Agreement_Memo" />
+          </AssociationSet>
+          <AssociationSet Name="fky_Agreement_Organisation" Association="AgreementModel.fky_Agreement_Organisation">
+            <End Role="Organisation" EntitySet="Organisation" />
+            <End Role="Agreement" EntitySet="Agreement" />
+          </AssociationSet>
+          <AssociationSet Name="fky_Agreement_ResponsibleExternal_Agreement" Association="AgreementModel.fky_Agreement_ResponsibleExternal_Agreement">
+            <End Role="Agreement" EntitySet="Agreement" />
+            <End Role="Agreement_ResponsibleExternal" EntitySet="Agreement_ResponsibleExternal" />
+          </AssociationSet>
+          <AssociationSet Name="fky_Agreement_ResponsibleInternal_Agreement" Association="AgreementModel.fky_Agreement_ResponsibleInternal_Agreement">
+            <End Role="Agreement" EntitySet="Agreement" />
+            <End Role="Agreement_ResponsibleInternal" EntitySet="Agreement_ResponsibleInternal" />
+          </AssociationSet>
+          <AssociationSet Name="fky_Agreement_RevenueDimension" Association="AgreementModel.fky_Agreement_RevenueDimension">
+            <End Role="RevenueDimension" EntitySet="RevenueDimension" />
+            <End Role="Agreement" EntitySet="Agreement" />
+          </AssociationSet>
+          <AssociationSet Name="fky_Agreement_RevenueTrend" Association="AgreementModel.fky_Agreement_RevenueTrend">
+            <End Role="RevenueTrend" EntitySet="RevenueTrend" />
+            <End Role="Agreement" EntitySet="Agreement" />
+          </AssociationSet>
+          <AssociationSet Name="fky_Agreement_SalesActual_Agreement" Association="AgreementModel.fky_Agreement_SalesActual_Agreement">
+            <End Role="Agreement" EntitySet="Agreement" />
+            <End Role="Agreement_SalesActual" EntitySet="Agreement_SalesActual" />
+          </AssociationSet>
+          <AssociationSet Name="fky_Agreement_SalesPlan_Agreement" Association="AgreementModel.fky_Agreement_SalesPlan_Agreement">
+            <End Role="Agreement" EntitySet="Agreement" />
+            <End Role="Agreement_SalesPlan" EntitySet="Agreement_SalesPlan" />
+          </AssociationSet>
+          <AssociationSet Name="fky_Agreement_Sector" Association="AgreementModel.fky_Agreement_Sector">
+            <End Role="Sector" EntitySet="Sector" />
+            <End Role="Agreement" EntitySet="Agreement" />
+          </AssociationSet>
+          <AssociationSet Name="fky_Agreement_Todo_Agreement" Association="AgreementModel.fky_Agreement_Todo_Agreement">
+            <End Role="Agreement" EntitySet="Agreement" />
+            <End Role="Agreement_Todo" EntitySet="Agreement_Todo" />
+          </AssociationSet>
+          <AssociationSet Name="fky_Agreement_TowerDelivery" Association="AgreementModel.fky_Agreement_TowerDelivery">
+            <End Role="TowerDelivery" EntitySet="TowerDelivery" />
+            <End Role="Agreement" EntitySet="Agreement" />
+          </AssociationSet>
+          <AssociationSet Name="fky_Agreement_TowerService" Association="AgreementModel.fky_Agreement_TowerService">
+            <End Role="TowerService" EntitySet="TowerService" />
+            <End Role="Agreement" EntitySet="Agreement" />
+          </AssociationSet>
+          <AssociationSet Name="fky_Agreement_Memo_InternalPerson" Association="AgreementModel.fky_Agreement_Memo_InternalPerson">
+            <End Role="InternalPerson" EntitySet="InternalPerson" />
+            <End Role="Agreement_Memo" EntitySet="Agreement_Memo" />
+          </AssociationSet>
+          <AssociationSet Name="fky_Agreement_Memo_MemoType" Association="AgreementModel.fky_Agreement_Memo_MemoType">
+            <End Role="MemoType" EntitySet="MemoType" />
+            <End Role="Agreement_Memo" EntitySet="Agreement_Memo" />
+          </AssociationSet>
+          <AssociationSet Name="fky_Agreement_ResponsibleExternal_ExternalPerson" Association="AgreementModel.fky_Agreement_ResponsibleExternal_ExternalPerson">
+            <End Role="ExternalPerson" EntitySet="ExternalPerson" />
+            <End Role="Agreement_ResponsibleExternal" EntitySet="Agreement_ResponsibleExternal" />
+          </AssociationSet>
+          <AssociationSet Name="fky_Agreement_ResponsibleExternal_ExternalRole" Association="AgreementModel.fky_Agreement_ResponsibleExternal_ExternalRole">
+            <End Role="ExternalRole" EntitySet="ExternalRole" />
+            <End Role="Agreement_ResponsibleExternal" EntitySet="Agreement_ResponsibleExternal" />
+          </AssociationSet>
+          <AssociationSet Name="fky_Agreement_ResponsibleInternal_InternalPerson" Association="AgreementModel.fky_Agreement_ResponsibleInternal_InternalPerson">
+            <End Role="InternalPerson" EntitySet="InternalPerson" />
+            <End Role="Agreement_ResponsibleInternal" EntitySet="Agreement_ResponsibleInternal" />
+          </AssociationSet>
+          <AssociationSet Name="fky_Agreement_ResponsibleInternal_InternalRole" Association="AgreementModel.fky_Agreement_ResponsibleInternal_InternalRole">
+            <End Role="InternalRole" EntitySet="InternalRole" />
+            <End Role="Agreement_ResponsibleInternal" EntitySet="Agreement_ResponsibleInternal" />
+          </AssociationSet>
+          <AssociationSet Name="fky_Agreement_SalesActual_ExpiryCategory" Association="AgreementModel.fky_Agreement_SalesActual_ExpiryCategory">
+            <End Role="ExpiryCategory" EntitySet="ExpiryCategory" />
+            <End Role="Agreement_SalesActual" EntitySet="Agreement_SalesActual" />
+          </AssociationSet>
+          <AssociationSet Name="fky_Agreement_Todo_InternalPerson_Assigned" Association="AgreementModel.fky_Agreement_Todo_InternalPerson_Assigned">
+            <End Role="InternalPerson" EntitySet="InternalPerson" />
+            <End Role="Agreement_Todo" EntitySet="Agreement_Todo" />
+          </AssociationSet>
+          <AssociationSet Name="fky_Agreement_Todo_InternalPerson_Created" Association="AgreementModel.fky_Agreement_Todo_InternalPerson_Created">
+            <End Role="InternalPerson" EntitySet="InternalPerson" />
+            <End Role="Agreement_Todo" EntitySet="Agreement_Todo" />
+          </AssociationSet>
+          <AssociationSet Name="fky_Agreement_Todo_TodoFlag" Association="AgreementModel.fky_Agreement_Todo_TodoFlag">
+            <End Role="TodoFlag" EntitySet="TodoFlag" />
+            <End Role="Agreement_Todo" EntitySet="Agreement_Todo" />
+          </AssociationSet>
+          <AssociationSet Name="fky_Agreement_Todo_TodoPriority" Association="AgreementModel.fky_Agreement_Todo_TodoPriority">
+            <End Role="TodoPriority" EntitySet="TodoPriority" />
+            <End Role="Agreement_Todo" EntitySet="Agreement_Todo" />
+          </AssociationSet>
+          <AssociationSet Name="fky_Agreement_Todo_TodoType" Association="AgreementModel.fky_Agreement_Todo_TodoType">
+            <End Role="TodoType" EntitySet="TodoType" />
+            <End Role="Agreement_Todo" EntitySet="Agreement_Todo" />
+          </AssociationSet>
+          <EntitySet Name="ImportBulk" EntityType="AgreementModel.ImportBulk" />
+          <EntitySet Name="ImportOption" EntityType="AgreementModel.ImportOption" />
+          </EntityContainer>
+        <EntityType Name="Contract">
+          <Key>
+            <PropertyRef Name="ContractNumber" />
+          </Key>
+          <Property Name="ContractNumber" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ContractName" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Contract_Document" Relationship="AgreementModel.fky_Contract_Document_Contract" FromRole="Contract" ToRole="Contract_Document" />
+          <NavigationProperty Name="Agreement" Relationship="AgreementModel.fky_Agreement_Contract" FromRole="Contract" ToRole="Agreement" />
+        </EntityType>
+        <EntityType Name="DocumentType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Caption" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Contract_Document" Relationship="AgreementModel.fky_Contract_Document_DocumentType" FromRole="DocumentType" ToRole="Contract_Document" />
+        </EntityType>
+        <EntityType Name="Contract_Document">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Contract_Number" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Agreement_id" />
+          <Property Type="Int32" Name="DocumentType_id" Nullable="false" />
+          <Property Type="Binary" Name="DocumentFileBinary" MaxLength="Max" FixedLength="false" />
+          <Property Type="String" Name="DocumentKeyword" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DocumentFilePath" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Contract" Relationship="AgreementModel.fky_Contract_Document_Contract" FromRole="Contract_Document" ToRole="Contract" />
+          <NavigationProperty Name="DocumentType" Relationship="AgreementModel.fky_Contract_Document_DocumentType" FromRole="Contract_Document" ToRole="DocumentType" />
+        </EntityType>
+        <Association Name="fky_Contract_Document_Contract">
+          <End Type="AgreementModel.Contract" Role="Contract" Multiplicity="1" />
+          <End Type="AgreementModel.Contract_Document" Role="Contract_Document" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contract">
+              <PropertyRef Name="ContractNumber" />
+            </Principal>
+            <Dependent Role="Contract_Document">
+              <PropertyRef Name="Contract_Number" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fky_Contract_Document_DocumentType">
+          <End Type="AgreementModel.DocumentType" Role="DocumentType" Multiplicity="1" />
+          <End Type="AgreementModel.Contract_Document" Role="Contract_Document" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DocumentType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Contract_Document">
+              <PropertyRef Name="DocumentType_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Agreement">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="AgreementNumber" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ContractNumber" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SAPContractNumber" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Country" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Debitor" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="OrderNumber" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Organisation_id" />
+          <Property Type="Int32" Name="Sector_id" />
+          <Property Type="Int32" Name="TowerService_id" />
+          <Property Type="Int32" Name="TowerDelivery_id" />
+          <Property Type="Int32" Name="AgreementStatus_id" />
+          <Property Type="Decimal" Name="AmountPlanPerMonth" Precision="19" Scale="5" />
+          <Property Type="Int32" Name="RevenueTrend_id" />
+          <Property Type="Int32" Name="RevenueDimension_id" />
+          <NavigationProperty Name="Contract" Relationship="AgreementModel.fky_Agreement_Contract" FromRole="Agreement" ToRole="Contract" />
+          <NavigationProperty Name="Agreement_AccountUnit" Relationship="AgreementModel.fky_Agreement_AccountUnit_Agreement" FromRole="Agreement" ToRole="Agreement_AccountUnit" />
+          <NavigationProperty Name="AgreementStatus" Relationship="AgreementModel.fky_Agreement_AgreementStatus" FromRole="Agreement" ToRole="AgreementStatus" />
+          <NavigationProperty Name="Agreement_CostActual" Relationship="AgreementModel.fky_Agreement_CostActual_Agreement" FromRole="Agreement" ToRole="Agreement_CostActual" />
+          <NavigationProperty Name="Agreement_Memo" Relationship="AgreementModel.fky_Agreement_Memo_Agreement" FromRole="Agreement" ToRole="Agreement_Memo" />
+          <NavigationProperty Name="Organisation" Relationship="AgreementModel.fky_Agreement_Organisation" FromRole="Agreement" ToRole="Organisation" />
+          <NavigationProperty Name="Agreement_ResponsibleExternal" Relationship="AgreementModel.fky_Agreement_ResponsibleExternal_Agreement" FromRole="Agreement" ToRole="Agreement_ResponsibleExternal" />
+          <NavigationProperty Name="Agreement_ResponsibleInternal" Relationship="AgreementModel.fky_Agreement_ResponsibleInternal_Agreement" FromRole="Agreement" ToRole="Agreement_ResponsibleInternal" />
+          <NavigationProperty Name="RevenueDimension" Relationship="AgreementModel.fky_Agreement_RevenueDimension" FromRole="Agreement" ToRole="RevenueDimension" />
+          <NavigationProperty Name="RevenueTrend" Relationship="AgreementModel.fky_Agreement_RevenueTrend" FromRole="Agreement" ToRole="RevenueTrend" />
+          <NavigationProperty Name="Agreement_SalesActual" Relationship="AgreementModel.fky_Agreement_SalesActual_Agreement" FromRole="Agreement" ToRole="Agreement_SalesActual" />
+          <NavigationProperty Name="Agreement_SalesPlan" Relationship="AgreementModel.fky_Agreement_SalesPlan_Agreement" FromRole="Agreement" ToRole="Agreement_SalesPlan" />
+          <NavigationProperty Name="Sector" Relationship="AgreementModel.fky_Agreement_Sector" FromRole="Agreement" ToRole="Sector" />
+          <NavigationProperty Name="Agreement_Todo" Relationship="AgreementModel.fky_Agreement_Todo_Agreement" FromRole="Agreement" ToRole="Agreement_Todo" />
+          <NavigationProperty Name="TowerDelivery" Relationship="AgreementModel.fky_Agreement_TowerDelivery" FromRole="Agreement" ToRole="TowerDelivery" />
+          <NavigationProperty Name="TowerService" Relationship="AgreementModel.fky_Agreement_TowerService" FromRole="Agreement" ToRole="TowerService" />
+        </EntityType>
+        <Association Name="fky_Agreement_Contract">
+          <End Type="AgreementModel.Contract" Role="Contract" Multiplicity="0..1" />
+          <End Type="AgreementModel.Agreement" Role="Agreement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contract">
+              <PropertyRef Name="ContractNumber" />
+            </Principal>
+            <Dependent Role="Agreement">
+              <PropertyRef Name="ContractNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Agreement_AccountUnit">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Agreement_id" Nullable="false" />
+          <Property Type="Int32" Name="AccountUnit" />
+          <NavigationProperty Name="Agreement" Relationship="AgreementModel.fky_Agreement_AccountUnit_Agreement" FromRole="Agreement_AccountUnit" ToRole="Agreement" />
+        </EntityType>
+        <EntityType Name="Agreement_CostActual">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Agreement_id" Nullable="false" />
+          <Property Type="Byte" Name="MonthActivity" Nullable="false" />
+          <Property Type="Byte" Name="MonthInvoice" Nullable="false" />
+          <Property Type="Decimal" Name="AmountCost" Nullable="false" Precision="19" Scale="5" />
+          <Property Type="String" Name="BookingText" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Agreement" Relationship="AgreementModel.fky_Agreement_CostActual_Agreement" FromRole="Agreement_CostActual" ToRole="Agreement" />
+        </EntityType>
+        <EntityType Name="Agreement_Memo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Agreement_id" Nullable="false" />
+          <Property Type="DateTime" Name="MemoTimestamp" Nullable="false" Precision="3" />
+          <Property Type="String" Name="MemoText" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="MemoType_id" Nullable="false" />
+          <Property Type="Int32" Name="InternalPerson_id" />
+          <NavigationProperty Name="Agreement" Relationship="AgreementModel.fky_Agreement_Memo_Agreement" FromRole="Agreement_Memo" ToRole="Agreement" />
+          <NavigationProperty Name="InternalPerson" Relationship="AgreementModel.fky_Agreement_Memo_InternalPerson" FromRole="Agreement_Memo" ToRole="InternalPerson" />
+          <NavigationProperty Name="MemoType" Relationship="AgreementModel.fky_Agreement_Memo_MemoType" FromRole="Agreement_Memo" ToRole="MemoType" />
+        </EntityType>
+        <EntityType Name="Agreement_ResponsibleExternal">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Agreement_id" Nullable="false" />
+          <Property Type="Int32" Name="ExternalRole_id" Nullable="false" />
+          <Property Type="Int32" Name="ExternalPerson_id" Nullable="false" />
+          <NavigationProperty Name="Agreement" Relationship="AgreementModel.fky_Agreement_ResponsibleExternal_Agreement" FromRole="Agreement_ResponsibleExternal" ToRole="Agreement" />
+          <NavigationProperty Name="ExternalPerson" Relationship="AgreementModel.fky_Agreement_ResponsibleExternal_ExternalPerson" FromRole="Agreement_ResponsibleExternal" ToRole="ExternalPerson" />
+          <NavigationProperty Name="ExternalRole" Relationship="AgreementModel.fky_Agreement_ResponsibleExternal_ExternalRole" FromRole="Agreement_ResponsibleExternal" ToRole="ExternalRole" />
+        </EntityType>
+        <EntityType Name="Agreement_ResponsibleInternal">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Agreement_id" Nullable="false" />
+          <Property Type="Int32" Name="InternalRole_id" Nullable="false" />
+          <Property Type="Int32" Name="InternalPerson_id" Nullable="false" />
+          <NavigationProperty Name="Agreement" Relationship="AgreementModel.fky_Agreement_ResponsibleInternal_Agreement" FromRole="Agreement_ResponsibleInternal" ToRole="Agreement" />
+          <NavigationProperty Name="InternalPerson" Relationship="AgreementModel.fky_Agreement_ResponsibleInternal_InternalPerson" FromRole="Agreement_ResponsibleInternal" ToRole="InternalPerson" />
+          <NavigationProperty Name="InternalRole" Relationship="AgreementModel.fky_Agreement_ResponsibleInternal_InternalRole" FromRole="Agreement_ResponsibleInternal" ToRole="InternalRole" />
+        </EntityType>
+        <EntityType Name="Agreement_SalesActual">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Agreement_id" Nullable="false" />
+          <Property Type="String" Name="InvoiceNumber" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="InvoiceDate" Nullable="false" Precision="3" />
+          <Property Type="String" Name="InvoiceText" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Type="Byte" Name="MonthActivity" Nullable="false" />
+          <Property Type="Byte" Name="MonthInvoice" Nullable="false" />
+          <Property Type="Decimal" Name="AmountInvoice" Nullable="false" Precision="19" Scale="5" />
+          <Property Type="DateTime" Name="ExpiryDate" Nullable="false" Precision="3" />
+          <Property Type="Decimal" Name="AmountOutstanding" Precision="19" Scale="5" />
+          <Property Type="Int32" Name="ExpirySinceDays" />
+          <Property Type="Int32" Name="ExpiryCategory_id" />
+          <NavigationProperty Name="Agreement" Relationship="AgreementModel.fky_Agreement_SalesActual_Agreement" FromRole="Agreement_SalesActual" ToRole="Agreement" />
+          <NavigationProperty Name="ExpiryCategory" Relationship="AgreementModel.fky_Agreement_SalesActual_ExpiryCategory" FromRole="Agreement_SalesActual" ToRole="ExpiryCategory" />
+        </EntityType>
+        <EntityType Name="Agreement_SalesPlan">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Agreement_id" Nullable="false" />
+          <Property Type="Byte" Name="MonthActivity" Nullable="false" />
+          <Property Type="Byte" Name="MonthInvoice" Nullable="false" />
+          <Property Type="Decimal" Name="AmountPlan" Nullable="false" Precision="19" Scale="5" />
+          <NavigationProperty Name="Agreement" Relationship="AgreementModel.fky_Agreement_SalesPlan_Agreement" FromRole="Agreement_SalesPlan" ToRole="Agreement" />
+        </EntityType>
+        <EntityType Name="Agreement_Todo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Agreement_id" Nullable="false" />
+          <Property Type="Int32" Name="TodoType_id" Nullable="false" />
+          <Property Type="Int32" Name="TodoFlag_id" Nullable="false" />
+          <Property Type="Int32" Name="TodoPriority_id" Nullable="false" />
+          <Property Type="String" Name="TodoComment" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Created_InternalPerson_id" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="Assigned_InternalPerson_id" Nullable="false" />
+          <Property Type="DateTime" Name="ExpriyDate" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Agreement" Relationship="AgreementModel.fky_Agreement_Todo_Agreement" FromRole="Agreement_Todo" ToRole="Agreement" />
+          <NavigationProperty Name="InternalPerson" Relationship="AgreementModel.fky_Agreement_Todo_InternalPerson_Assigned" FromRole="Agreement_Todo" ToRole="InternalPerson" />
+          <NavigationProperty Name="InternalPerson1" Relationship="AgreementModel.fky_Agreement_Todo_InternalPerson_Created" FromRole="Agreement_Todo" ToRole="InternalPerson" />
+          <NavigationProperty Name="TodoFlag" Relationship="AgreementModel.fky_Agreement_Todo_TodoFlag" FromRole="Agreement_Todo" ToRole="TodoFlag" />
+          <NavigationProperty Name="TodoPriority" Relationship="AgreementModel.fky_Agreement_Todo_TodoPriority" FromRole="Agreement_Todo" ToRole="TodoPriority" />
+          <NavigationProperty Name="TodoType" Relationship="AgreementModel.fky_Agreement_Todo_TodoType" FromRole="Agreement_Todo" ToRole="TodoType" />
+        </EntityType>
+        <EntityType Name="AgreementStatus">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Caption" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Agreement" Relationship="AgreementModel.fky_Agreement_AgreementStatus" FromRole="AgreementStatus" ToRole="Agreement" />
+        </EntityType>
+        <EntityType Name="ExpiryCategory">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Caption" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Agreement_SalesActual" Relationship="AgreementModel.fky_Agreement_SalesActual_ExpiryCategory" FromRole="ExpiryCategory" ToRole="Agreement_SalesActual" />
+        </EntityType>
+        <EntityType Name="ExternalPerson">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="UniqueName" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LastName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FirstName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Agreement_ResponsibleExternal" Relationship="AgreementModel.fky_Agreement_ResponsibleExternal_ExternalPerson" FromRole="ExternalPerson" ToRole="Agreement_ResponsibleExternal" />
+        </EntityType>
+        <EntityType Name="ExternalRole">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Caption" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Agreement_ResponsibleExternal" Relationship="AgreementModel.fky_Agreement_ResponsibleExternal_ExternalRole" FromRole="ExternalRole" ToRole="Agreement_ResponsibleExternal" />
+        </EntityType>
+        <EntityType Name="Import_SalesActual">
+          <Key>
+            <PropertyRef Name="GUID" />
+          </Key>
+          <Property Type="String" Name="GUID" Nullable="false" MaxLength="38" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ImportResult" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Agreement_id" />
+          <Property Type="String" Name="PSPElement" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="RefBelegnummer" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Buchungsperiode" />
+          <Property Type="String" Name="RefBelegtyp" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Profitcenter" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Kontonummer" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Bezeichnung" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Umsatz" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Waehrung" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="WBSElementText" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Material" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Text" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Debitor" MaxLength="15" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="InternalPerson">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="UniqueName" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LastName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FirstName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Agreement_Memo" Relationship="AgreementModel.fky_Agreement_Memo_InternalPerson" FromRole="InternalPerson" ToRole="Agreement_Memo" />
+          <NavigationProperty Name="Agreement_ResponsibleInternal" Relationship="AgreementModel.fky_Agreement_ResponsibleInternal_InternalPerson" FromRole="InternalPerson" ToRole="Agreement_ResponsibleInternal" />
+          <NavigationProperty Name="Agreement_Todo" Relationship="AgreementModel.fky_Agreement_Todo_InternalPerson_Assigned" FromRole="InternalPerson" ToRole="Agreement_Todo" />
+          <NavigationProperty Name="Agreement_Todo1" Relationship="AgreementModel.fky_Agreement_Todo_InternalPerson_Created" FromRole="InternalPerson" ToRole="Agreement_Todo" />
+        </EntityType>
+        <EntityType Name="InternalRole">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Caption" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Agreement_ResponsibleInternal" Relationship="AgreementModel.fky_Agreement_ResponsibleInternal_InternalRole" FromRole="InternalRole" ToRole="Agreement_ResponsibleInternal" />
+        </EntityType>
+        <EntityType Name="MemoType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Caption" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Agreement_Memo" Relationship="AgreementModel.fky_Agreement_Memo_MemoType" FromRole="MemoType" ToRole="Agreement_Memo" />
+        </EntityType>
+        <EntityType Name="Organisation">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Caption" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Agreement" Relationship="AgreementModel.fky_Agreement_Organisation" FromRole="Organisation" ToRole="Agreement" />
+        </EntityType>
+        <EntityType Name="RevenueDimension">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Caption" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Agreement" Relationship="AgreementModel.fky_Agreement_RevenueDimension" FromRole="RevenueDimension" ToRole="Agreement" />
+        </EntityType>
+        <EntityType Name="RevenueTrend">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Caption" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Agreement" Relationship="AgreementModel.fky_Agreement_RevenueTrend" FromRole="RevenueTrend" ToRole="Agreement" />
+        </EntityType>
+        <EntityType Name="Sector">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Caption" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Agreement" Relationship="AgreementModel.fky_Agreement_Sector" FromRole="Sector" ToRole="Agreement" />
+        </EntityType>
+        <EntityType Name="TodoFlag">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Caption" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Agreement_Todo" Relationship="AgreementModel.fky_Agreement_Todo_TodoFlag" FromRole="TodoFlag" ToRole="Agreement_Todo" />
+        </EntityType>
+        <EntityType Name="TodoPriority">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Caption" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Agreement_Todo" Relationship="AgreementModel.fky_Agreement_Todo_TodoPriority" FromRole="TodoPriority" ToRole="Agreement_Todo" />
+        </EntityType>
+        <EntityType Name="TodoType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Caption" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Agreement_Todo" Relationship="AgreementModel.fky_Agreement_Todo_TodoType" FromRole="TodoType" ToRole="Agreement_Todo" />
+        </EntityType>
+        <EntityType Name="TowerDelivery">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Caption" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Agreement" Relationship="AgreementModel.fky_Agreement_TowerDelivery" FromRole="TowerDelivery" ToRole="Agreement" />
+        </EntityType>
+        <EntityType Name="TowerService">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Caption" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Agreement" Relationship="AgreementModel.fky_Agreement_TowerService" FromRole="TowerService" ToRole="Agreement" />
+        </EntityType>
+        <EntityType Name="vwImportBulk">
+          <Key>
+            <PropertyRef Name="PSPElement" />
+            <PropertyRef Name="RefBelegnummer" />
+            <PropertyRef Name="Buchungsperiode" />
+          </Key>
+          <Property Type="String" Name="PSPElement" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="RefBelegnummer" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Buchungsperiode" Nullable="false" />
+          <Property Type="String" Name="RefBelegtyp" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Profitcenter" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Kontonummer" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Bezeichnung" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="Umsatz" Precision="38" Scale="2" />
+          <Property Type="String" Name="Waehrung" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="WBSElementText" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Material" />
+          <Property Type="String" Name="Text" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Debitor" MaxLength="15" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="fky_Agreement_AccountUnit_Agreement">
+          <End Type="AgreementModel.Agreement" Role="Agreement" Multiplicity="1" />
+          <End Type="AgreementModel.Agreement_AccountUnit" Role="Agreement_AccountUnit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Agreement">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agreement_AccountUnit">
+              <PropertyRef Name="Agreement_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fky_Agreement_AgreementStatus">
+          <End Type="AgreementModel.AgreementStatus" Role="AgreementStatus" Multiplicity="0..1" />
+          <End Type="AgreementModel.Agreement" Role="Agreement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AgreementStatus">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agreement">
+              <PropertyRef Name="AgreementStatus_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fky_Agreement_CostActual_Agreement">
+          <End Type="AgreementModel.Agreement" Role="Agreement" Multiplicity="1" />
+          <End Type="AgreementModel.Agreement_CostActual" Role="Agreement_CostActual" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Agreement">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agreement_CostActual">
+              <PropertyRef Name="Agreement_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fky_Agreement_Memo_Agreement">
+          <End Type="AgreementModel.Agreement" Role="Agreement" Multiplicity="1" />
+          <End Type="AgreementModel.Agreement_Memo" Role="Agreement_Memo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Agreement">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agreement_Memo">
+              <PropertyRef Name="Agreement_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fky_Agreement_Organisation">
+          <End Type="AgreementModel.Organisation" Role="Organisation" Multiplicity="0..1" />
+          <End Type="AgreementModel.Agreement" Role="Agreement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Organisation">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agreement">
+              <PropertyRef Name="Organisation_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fky_Agreement_ResponsibleExternal_Agreement">
+          <End Type="AgreementModel.Agreement" Role="Agreement" Multiplicity="1" />
+          <End Type="AgreementModel.Agreement_ResponsibleExternal" Role="Agreement_ResponsibleExternal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Agreement">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agreement_ResponsibleExternal">
+              <PropertyRef Name="Agreement_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fky_Agreement_ResponsibleInternal_Agreement">
+          <End Type="AgreementModel.Agreement" Role="Agreement" Multiplicity="1" />
+          <End Type="AgreementModel.Agreement_ResponsibleInternal" Role="Agreement_ResponsibleInternal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Agreement">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agreement_ResponsibleInternal">
+              <PropertyRef Name="Agreement_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fky_Agreement_RevenueDimension">
+          <End Type="AgreementModel.RevenueDimension" Role="RevenueDimension" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="AgreementModel.Agreement" Role="Agreement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RevenueDimension">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agreement">
+              <PropertyRef Name="RevenueDimension_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fky_Agreement_RevenueTrend">
+          <End Type="AgreementModel.RevenueTrend" Role="RevenueTrend" Multiplicity="0..1" />
+          <End Type="AgreementModel.Agreement" Role="Agreement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RevenueTrend">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agreement">
+              <PropertyRef Name="RevenueTrend_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fky_Agreement_SalesActual_Agreement">
+          <End Type="AgreementModel.Agreement" Role="Agreement" Multiplicity="1" />
+          <End Type="AgreementModel.Agreement_SalesActual" Role="Agreement_SalesActual" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Agreement">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agreement_SalesActual">
+              <PropertyRef Name="Agreement_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fky_Agreement_SalesPlan_Agreement">
+          <End Type="AgreementModel.Agreement" Role="Agreement" Multiplicity="1" />
+          <End Type="AgreementModel.Agreement_SalesPlan" Role="Agreement_SalesPlan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Agreement">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agreement_SalesPlan">
+              <PropertyRef Name="Agreement_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fky_Agreement_Sector">
+          <End Type="AgreementModel.Sector" Role="Sector" Multiplicity="0..1" />
+          <End Type="AgreementModel.Agreement" Role="Agreement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sector">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agreement">
+              <PropertyRef Name="Sector_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fky_Agreement_Todo_Agreement">
+          <End Type="AgreementModel.Agreement" Role="Agreement" Multiplicity="1" />
+          <End Type="AgreementModel.Agreement_Todo" Role="Agreement_Todo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Agreement">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agreement_Todo">
+              <PropertyRef Name="Agreement_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fky_Agreement_TowerDelivery">
+          <End Type="AgreementModel.TowerDelivery" Role="TowerDelivery" Multiplicity="0..1" />
+          <End Type="AgreementModel.Agreement" Role="Agreement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TowerDelivery">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agreement">
+              <PropertyRef Name="TowerDelivery_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fky_Agreement_TowerService">
+          <End Type="AgreementModel.TowerService" Role="TowerService" Multiplicity="0..1" />
+          <End Type="AgreementModel.Agreement" Role="Agreement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TowerService">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agreement">
+              <PropertyRef Name="TowerService_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fky_Agreement_Memo_InternalPerson">
+          <End Type="AgreementModel.InternalPerson" Role="InternalPerson" Multiplicity="0..1" />
+          <End Type="AgreementModel.Agreement_Memo" Role="Agreement_Memo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="InternalPerson">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agreement_Memo">
+              <PropertyRef Name="InternalPerson_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fky_Agreement_Memo_MemoType">
+          <End Type="AgreementModel.MemoType" Role="MemoType" Multiplicity="1" />
+          <End Type="AgreementModel.Agreement_Memo" Role="Agreement_Memo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MemoType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agreement_Memo">
+              <PropertyRef Name="MemoType_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fky_Agreement_ResponsibleExternal_ExternalPerson">
+          <End Type="AgreementModel.ExternalPerson" Role="ExternalPerson" Multiplicity="1" />
+          <End Type="AgreementModel.Agreement_ResponsibleExternal" Role="Agreement_ResponsibleExternal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ExternalPerson">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agreement_ResponsibleExternal">
+              <PropertyRef Name="ExternalPerson_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fky_Agreement_ResponsibleExternal_ExternalRole">
+          <End Type="AgreementModel.ExternalRole" Role="ExternalRole" Multiplicity="1" />
+          <End Type="AgreementModel.Agreement_ResponsibleExternal" Role="Agreement_ResponsibleExternal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ExternalRole">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agreement_ResponsibleExternal">
+              <PropertyRef Name="ExternalRole_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fky_Agreement_ResponsibleInternal_InternalPerson">
+          <End Type="AgreementModel.InternalPerson" Role="InternalPerson" Multiplicity="1" />
+          <End Type="AgreementModel.Agreement_ResponsibleInternal" Role="Agreement_ResponsibleInternal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="InternalPerson">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agreement_ResponsibleInternal">
+              <PropertyRef Name="InternalPerson_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fky_Agreement_ResponsibleInternal_InternalRole">
+          <End Type="AgreementModel.InternalRole" Role="InternalRole" Multiplicity="1" />
+          <End Type="AgreementModel.Agreement_ResponsibleInternal" Role="Agreement_ResponsibleInternal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="InternalRole">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agreement_ResponsibleInternal">
+              <PropertyRef Name="InternalRole_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fky_Agreement_SalesActual_ExpiryCategory">
+          <End Type="AgreementModel.ExpiryCategory" Role="ExpiryCategory" Multiplicity="0..1" />
+          <End Type="AgreementModel.Agreement_SalesActual" Role="Agreement_SalesActual" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ExpiryCategory">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agreement_SalesActual">
+              <PropertyRef Name="ExpiryCategory_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fky_Agreement_Todo_InternalPerson_Assigned">
+          <End Type="AgreementModel.InternalPerson" Role="InternalPerson" Multiplicity="1" />
+          <End Type="AgreementModel.Agreement_Todo" Role="Agreement_Todo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="InternalPerson">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agreement_Todo">
+              <PropertyRef Name="Assigned_InternalPerson_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fky_Agreement_Todo_InternalPerson_Created">
+          <End Type="AgreementModel.InternalPerson" Role="InternalPerson" Multiplicity="1" />
+          <End Type="AgreementModel.Agreement_Todo" Role="Agreement_Todo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="InternalPerson">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agreement_Todo">
+              <PropertyRef Name="Created_InternalPerson_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fky_Agreement_Todo_TodoFlag">
+          <End Type="AgreementModel.TodoFlag" Role="TodoFlag" Multiplicity="1" />
+          <End Type="AgreementModel.Agreement_Todo" Role="Agreement_Todo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TodoFlag">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agreement_Todo">
+              <PropertyRef Name="TodoFlag_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fky_Agreement_Todo_TodoPriority">
+          <End Type="AgreementModel.TodoPriority" Role="TodoPriority" Multiplicity="1" />
+          <End Type="AgreementModel.Agreement_Todo" Role="Agreement_Todo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TodoPriority">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agreement_Todo">
+              <PropertyRef Name="TodoPriority_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fky_Agreement_Todo_TodoType">
+          <End Type="AgreementModel.TodoType" Role="TodoType" Multiplicity="1" />
+          <End Type="AgreementModel.Agreement_Todo" Role="Agreement_Todo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TodoType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agreement_Todo">
+              <PropertyRef Name="TodoType_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ImportBulk">
+          <Key>
+            <PropertyRef Name="RefBelegnummer" />
+            <PropertyRef Name="RefBelegzeile" />
+            <PropertyRef Name="PSPElement" />
+          </Key>
+          <Property Type="String" Name="RefBelegtyp" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="RefBelegnummer" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="RefBelegzeile" Nullable="false" />
+          <Property Type="Int32" Name="Buchungsperiode" Nullable="false" />
+          <Property Type="String" Name="Profitcenter" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Kontonummer" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Bezeichnung" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="InProfitCenterHauswaehrung" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Waehrung" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PSPElement" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="WBSElementText" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Material" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Text" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Debitor" MaxLength="15" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ImportOption">
+          <Key>
+            <PropertyRef Name="ImportProfile" />
+          </Key>
+          <Property Type="String" Name="ImportProfile" Nullable="false" MaxLength="38" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ImportFilePath" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ImportFilePattern" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FieldTerminator" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="RowTerminator" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ServerName" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AgreementModelStoreContainer" CdmEntityContainer="AgreementEntities">
+          <EntitySetMapping Name="Contract"><EntityTypeMapping TypeName="AgreementModel.Contract"><MappingFragment StoreEntitySet="Contract">
+            <ScalarProperty Name="ContractNumber" ColumnName="ContractNumber" />
+            <ScalarProperty Name="ContractName" ColumnName="ContractName" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="DocumentType"><EntityTypeMapping TypeName="AgreementModel.DocumentType"><MappingFragment StoreEntitySet="DocumentType">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="Caption" ColumnName="Caption" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Contract_Document">
+            <EntityTypeMapping TypeName="AgreementModel.Contract_Document">
+              <MappingFragment StoreEntitySet="Contract_Document">
+                <ScalarProperty Name="DocumentFilePath" ColumnName="DocumentFilePath" />
+                <ScalarProperty Name="DocumentKeyword" ColumnName="DocumentKeyword" />
+                <ScalarProperty Name="DocumentFileBinary" ColumnName="DocumentFileBinary" />
+                <ScalarProperty Name="DocumentType_id" ColumnName="DocumentType_id" />
+                <ScalarProperty Name="Agreement_id" ColumnName="Agreement_id" />
+                <ScalarProperty Name="Contract_Number" ColumnName="Contract_Number" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Agreement">
+            <EntityTypeMapping TypeName="AgreementModel.Agreement">
+              <MappingFragment StoreEntitySet="Agreement">
+                <ScalarProperty Name="RevenueDimension_id" ColumnName="RevenueDimension_id" />
+                <ScalarProperty Name="RevenueTrend_id" ColumnName="RevenueTrend_id" />
+                <ScalarProperty Name="AmountPlanPerMonth" ColumnName="AmountPlanPerMonth" />
+                <ScalarProperty Name="AgreementStatus_id" ColumnName="AgreementStatus_id" />
+                <ScalarProperty Name="TowerDelivery_id" ColumnName="TowerDelivery_id" />
+                <ScalarProperty Name="TowerService_id" ColumnName="TowerService_id" />
+                <ScalarProperty Name="Sector_id" ColumnName="Sector_id" />
+                <ScalarProperty Name="Organisation_id" ColumnName="Organisation_id" />
+                <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
+                <ScalarProperty Name="Debitor" ColumnName="Debitor" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="SAPContractNumber" ColumnName="SAPContractNumber" />
+                <ScalarProperty Name="ContractNumber" ColumnName="ContractNumber" />
+                <ScalarProperty Name="AgreementNumber" ColumnName="AgreementNumber" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Agreement_AccountUnit">
+            <EntityTypeMapping TypeName="AgreementModel.Agreement_AccountUnit">
+              <MappingFragment StoreEntitySet="Agreement_AccountUnit">
+                <ScalarProperty Name="AccountUnit" ColumnName="AccountUnit" />
+                <ScalarProperty Name="Agreement_id" ColumnName="Agreement_id" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Agreement_CostActual">
+            <EntityTypeMapping TypeName="AgreementModel.Agreement_CostActual">
+              <MappingFragment StoreEntitySet="Agreement_CostActual">
+                <ScalarProperty Name="BookingText" ColumnName="BookingText" />
+                <ScalarProperty Name="AmountCost" ColumnName="AmountCost" />
+                <ScalarProperty Name="MonthInvoice" ColumnName="MonthInvoice" />
+                <ScalarProperty Name="MonthActivity" ColumnName="MonthActivity" />
+                <ScalarProperty Name="Agreement_id" ColumnName="Agreement_id" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Agreement_Memo">
+            <EntityTypeMapping TypeName="AgreementModel.Agreement_Memo">
+              <MappingFragment StoreEntitySet="Agreement_Memo">
+                <ScalarProperty Name="InternalPerson_id" ColumnName="InternalPerson_id" />
+                <ScalarProperty Name="MemoType_id" ColumnName="MemoType_id" />
+                <ScalarProperty Name="MemoText" ColumnName="MemoText" />
+                <ScalarProperty Name="MemoTimestamp" ColumnName="MemoTimestamp" />
+                <ScalarProperty Name="Agreement_id" ColumnName="Agreement_id" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Agreement_ResponsibleExternal">
+            <EntityTypeMapping TypeName="AgreementModel.Agreement_ResponsibleExternal">
+              <MappingFragment StoreEntitySet="Agreement_ResponsibleExternal">
+                <ScalarProperty Name="ExternalPerson_id" ColumnName="ExternalPerson_id" />
+                <ScalarProperty Name="ExternalRole_id" ColumnName="ExternalRole_id" />
+                <ScalarProperty Name="Agreement_id" ColumnName="Agreement_id" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Agreement_ResponsibleInternal">
+            <EntityTypeMapping TypeName="AgreementModel.Agreement_ResponsibleInternal">
+              <MappingFragment StoreEntitySet="Agreement_ResponsibleInternal">
+                <ScalarProperty Name="InternalPerson_id" ColumnName="InternalPerson_id" />
+                <ScalarProperty Name="InternalRole_id" ColumnName="InternalRole_id" />
+                <ScalarProperty Name="Agreement_id" ColumnName="Agreement_id" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Agreement_SalesActual">
+            <EntityTypeMapping TypeName="AgreementModel.Agreement_SalesActual">
+              <MappingFragment StoreEntitySet="Agreement_SalesActual">
+                <ScalarProperty Name="ExpiryCategory_id" ColumnName="ExpiryCategory_id" />
+                <ScalarProperty Name="ExpirySinceDays" ColumnName="ExpirySinceDays" />
+                <ScalarProperty Name="AmountOutstanding" ColumnName="AmountOutstanding" />
+                <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+                <ScalarProperty Name="AmountInvoice" ColumnName="AmountInvoice" />
+                <ScalarProperty Name="MonthInvoice" ColumnName="MonthInvoice" />
+                <ScalarProperty Name="MonthActivity" ColumnName="MonthActivity" />
+                <ScalarProperty Name="InvoiceText" ColumnName="InvoiceText" />
+                <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+                <ScalarProperty Name="InvoiceNumber" ColumnName="InvoiceNumber" />
+                <ScalarProperty Name="Agreement_id" ColumnName="Agreement_id" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Agreement_SalesPlan">
+            <EntityTypeMapping TypeName="AgreementModel.Agreement_SalesPlan">
+              <MappingFragment StoreEntitySet="Agreement_SalesPlan">
+                <ScalarProperty Name="AmountPlan" ColumnName="AmountPlan" />
+                <ScalarProperty Name="MonthInvoice" ColumnName="MonthInvoice" />
+                <ScalarProperty Name="MonthActivity" ColumnName="MonthActivity" />
+                <ScalarProperty Name="Agreement_id" ColumnName="Agreement_id" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Agreement_Todo">
+            <EntityTypeMapping TypeName="AgreementModel.Agreement_Todo">
+              <MappingFragment StoreEntitySet="Agreement_Todo">
+                <ScalarProperty Name="ExpriyDate" ColumnName="ExpriyDate" />
+                <ScalarProperty Name="Assigned_InternalPerson_id" ColumnName="Assigned_InternalPerson_id" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Created_InternalPerson_id" ColumnName="Created_InternalPerson_id" />
+                <ScalarProperty Name="TodoComment" ColumnName="TodoComment" />
+                <ScalarProperty Name="TodoPriority_id" ColumnName="TodoPriority_id" />
+                <ScalarProperty Name="TodoFlag_id" ColumnName="TodoFlag_id" />
+                <ScalarProperty Name="TodoType_id" ColumnName="TodoType_id" />
+                <ScalarProperty Name="Agreement_id" ColumnName="Agreement_id" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AgreementStatus">
+            <EntityTypeMapping TypeName="AgreementModel.AgreementStatus">
+              <MappingFragment StoreEntitySet="AgreementStatus">
+                <ScalarProperty Name="Caption" ColumnName="Caption" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ExpiryCategory">
+            <EntityTypeMapping TypeName="AgreementModel.ExpiryCategory">
+              <MappingFragment StoreEntitySet="ExpiryCategory">
+                <ScalarProperty Name="Caption" ColumnName="Caption" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ExternalPerson">
+            <EntityTypeMapping TypeName="AgreementModel.ExternalPerson">
+              <MappingFragment StoreEntitySet="ExternalPerson">
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="UniqueName" ColumnName="UniqueName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ExternalRole">
+            <EntityTypeMapping TypeName="AgreementModel.ExternalRole">
+              <MappingFragment StoreEntitySet="ExternalRole">
+                <ScalarProperty Name="Caption" ColumnName="Caption" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Import_SalesActual">
+            <EntityTypeMapping TypeName="AgreementModel.Import_SalesActual">
+              <MappingFragment StoreEntitySet="Import_SalesActual">
+                <ScalarProperty Name="Debitor" ColumnName="Debitor" />
+                <ScalarProperty Name="Text" ColumnName="Text" />
+                <ScalarProperty Name="Material" ColumnName="Material" />
+                <ScalarProperty Name="WBSElementText" ColumnName="WBSElementText" />
+                <ScalarProperty Name="Waehrung" ColumnName="Waehrung" />
+                <ScalarProperty Name="Umsatz" ColumnName="Umsatz" />
+                <ScalarProperty Name="Bezeichnung" ColumnName="Bezeichnung" />
+                <ScalarProperty Name="Kontonummer" ColumnName="Kontonummer" />
+                <ScalarProperty Name="Profitcenter" ColumnName="Profitcenter" />
+                <ScalarProperty Name="RefBelegtyp" ColumnName="RefBelegtyp" />
+                <ScalarProperty Name="Buchungsperiode" ColumnName="Buchungsperiode" />
+                <ScalarProperty Name="RefBelegnummer" ColumnName="RefBelegnummer" />
+                <ScalarProperty Name="PSPElement" ColumnName="PSPElement" />
+                <ScalarProperty Name="Agreement_id" ColumnName="Agreement_id" />
+                <ScalarProperty Name="ImportResult" ColumnName="ImportResult" />
+                <ScalarProperty Name="GUID" ColumnName="GUID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InternalPerson">
+            <EntityTypeMapping TypeName="AgreementModel.InternalPerson">
+              <MappingFragment StoreEntitySet="InternalPerson">
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="UniqueName" ColumnName="UniqueName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InternalRole">
+            <EntityTypeMapping TypeName="AgreementModel.InternalRole">
+              <MappingFragment StoreEntitySet="InternalRole">
+                <ScalarProperty Name="Caption" ColumnName="Caption" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MemoType">
+            <EntityTypeMapping TypeName="AgreementModel.MemoType">
+              <MappingFragment StoreEntitySet="MemoType">
+                <ScalarProperty Name="Caption" ColumnName="Caption" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Organisation">
+            <EntityTypeMapping TypeName="AgreementModel.Organisation">
+              <MappingFragment StoreEntitySet="Organisation">
+                <ScalarProperty Name="Caption" ColumnName="Caption" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RevenueDimension">
+            <EntityTypeMapping TypeName="AgreementModel.RevenueDimension">
+              <MappingFragment StoreEntitySet="RevenueDimension">
+                <ScalarProperty Name="Caption" ColumnName="Caption" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RevenueTrend">
+            <EntityTypeMapping TypeName="AgreementModel.RevenueTrend">
+              <MappingFragment StoreEntitySet="RevenueTrend">
+                <ScalarProperty Name="Caption" ColumnName="Caption" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sector">
+            <EntityTypeMapping TypeName="AgreementModel.Sector">
+              <MappingFragment StoreEntitySet="Sector">
+                <ScalarProperty Name="Caption" ColumnName="Caption" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TodoFlag">
+            <EntityTypeMapping TypeName="AgreementModel.TodoFlag">
+              <MappingFragment StoreEntitySet="TodoFlag">
+                <ScalarProperty Name="Caption" ColumnName="Caption" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TodoPriority">
+            <EntityTypeMapping TypeName="AgreementModel.TodoPriority">
+              <MappingFragment StoreEntitySet="TodoPriority">
+                <ScalarProperty Name="Caption" ColumnName="Caption" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TodoType">
+            <EntityTypeMapping TypeName="AgreementModel.TodoType">
+              <MappingFragment StoreEntitySet="TodoType">
+                <ScalarProperty Name="Caption" ColumnName="Caption" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TowerDelivery">
+            <EntityTypeMapping TypeName="AgreementModel.TowerDelivery">
+              <MappingFragment StoreEntitySet="TowerDelivery">
+                <ScalarProperty Name="Caption" ColumnName="Caption" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TowerService">
+            <EntityTypeMapping TypeName="AgreementModel.TowerService">
+              <MappingFragment StoreEntitySet="TowerService">
+                <ScalarProperty Name="Caption" ColumnName="Caption" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwImportBulk">
+            <EntityTypeMapping TypeName="AgreementModel.vwImportBulk">
+              <MappingFragment StoreEntitySet="vwImportBulk">
+                <ScalarProperty Name="Debitor" ColumnName="Debitor" />
+                <ScalarProperty Name="Text" ColumnName="Text" />
+                <ScalarProperty Name="Material" ColumnName="Material" />
+                <ScalarProperty Name="WBSElementText" ColumnName="WBSElementText" />
+                <ScalarProperty Name="Waehrung" ColumnName="Waehrung" />
+                <ScalarProperty Name="Umsatz" ColumnName="Umsatz" />
+                <ScalarProperty Name="Bezeichnung" ColumnName="Bezeichnung" />
+                <ScalarProperty Name="Kontonummer" ColumnName="Kontonummer" />
+                <ScalarProperty Name="Profitcenter" ColumnName="Profitcenter" />
+                <ScalarProperty Name="RefBelegtyp" ColumnName="RefBelegtyp" />
+                <ScalarProperty Name="Buchungsperiode" ColumnName="Buchungsperiode" />
+                <ScalarProperty Name="RefBelegnummer" ColumnName="RefBelegnummer" />
+                <ScalarProperty Name="PSPElement" ColumnName="PSPElement" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ImportBulk">
+            <EntityTypeMapping TypeName="AgreementModel.ImportBulk">
+              <MappingFragment StoreEntitySet="ImportBulk">
+                <ScalarProperty Name="Debitor" ColumnName="Debitor" />
+                <ScalarProperty Name="Text" ColumnName="Text" />
+                <ScalarProperty Name="Material" ColumnName="Material" />
+                <ScalarProperty Name="WBSElementText" ColumnName="WBSElementText" />
+                <ScalarProperty Name="PSPElement" ColumnName="PSPElement" />
+                <ScalarProperty Name="Waehrung" ColumnName="Waehrung" />
+                <ScalarProperty Name="InProfitCenterHauswaehrung" ColumnName="InProfitCenterHauswaehrung" />
+                <ScalarProperty Name="Bezeichnung" ColumnName="Bezeichnung" />
+                <ScalarProperty Name="Kontonummer" ColumnName="Kontonummer" />
+                <ScalarProperty Name="Profitcenter" ColumnName="Profitcenter" />
+                <ScalarProperty Name="Buchungsperiode" ColumnName="Buchungsperiode" />
+                <ScalarProperty Name="RefBelegzeile" ColumnName="RefBelegzeile" />
+                <ScalarProperty Name="RefBelegnummer" ColumnName="RefBelegnummer" />
+                <ScalarProperty Name="RefBelegtyp" ColumnName="RefBelegtyp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ImportOption">
+            <EntityTypeMapping TypeName="AgreementModel.ImportOption">
+              <MappingFragment StoreEntitySet="ImportOption">
+                <ScalarProperty Name="ServerName" ColumnName="ServerName" />
+                <ScalarProperty Name="RowTerminator" ColumnName="RowTerminator" />
+                <ScalarProperty Name="FieldTerminator" ColumnName="FieldTerminator" />
+                <ScalarProperty Name="ImportFilePattern" ColumnName="ImportFilePattern" />
+                <ScalarProperty Name="ImportFilePath" ColumnName="ImportFilePath" />
+                <ScalarProperty Name="ImportProfile" ColumnName="ImportProfile" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Model1" ZoomLevel="67">
+        <EntityTypeShape EntityType="AgreementModel.Contract" Width="1.5" PointX="0.75" PointY="1.5" Height="1.5956835937500002" IsExpanded="true" />
+        <EntityTypeShape EntityType="AgreementModel.DocumentType" Width="1.5" PointX="0.75" PointY="5.5" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="AgreementModel.Contract_Document" Width="1.5" PointX="3" PointY="2.875" Height="2.7494921874999996" />
+        <AssociationConnector Association="AgreementModel.fky_Contract_Document_Contract" >
+          <ConnectorPoint PointX="2.25" PointY="3.0814925130208328" />
+          <ConnectorPoint PointX="3" PointY="3.0814925130208328" />
+        </AssociationConnector>
+        <AssociationConnector Association="AgreementModel.fky_Contract_Document_DocumentType" >
+          <ConnectorPoint PointX="2.25" PointY="5.5" />
+          <ConnectorPoint PointX="2.625" PointY="5.125" />
+          <ConnectorPoint PointX="2.625" PointY="5.9994921875" />
+          <ConnectorPoint PointX="3" PointY="5.6244921875" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="AgreementModel.Agreement" Width="1.5" PointX="6.5" PointY="6.375" Height="4.0956022135416648" />
+        <AssociationConnector Association="AgreementModel.fky_Agreement_Contract" >
+          <ConnectorPoint PointX="2.25" PointY="2.15625" />
+          <ConnectorPoint PointX="7.25" PointY="2.15625" />
+          <ConnectorPoint PointX="7.25" PointY="6.375" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="AgreementModel.Agreement_AccountUnit" Width="1.5" PointX="7.9974403530347349" PointY="27.28997434456366" />
+        <EntityTypeShape EntityType="AgreementModel.Agreement_CostActual" Width="1.5" PointX="7.15307288018664" PointY="18.869543978418012" />
+        <EntityTypeShape EntityType="AgreementModel.Agreement_Memo" Width="1.5" PointX="10.349111224687245" PointY="22.404519672693926" />
+        <EntityTypeShape EntityType="AgreementModel.Agreement_ResponsibleExternal" Width="1.5" PointX="4.730682891202477" PointY="29.946741341588432" />
+        <EntityTypeShape EntityType="AgreementModel.Agreement_ResponsibleInternal" Width="1.5" PointX="11.474899660551408" PointY="23.318193237911068" />
+        <EntityTypeShape EntityType="AgreementModel.Agreement_SalesActual" Width="1.5" PointX="5.8815838889598773" PointY="6.0676755188348119" />
+        <EntityTypeShape EntityType="AgreementModel.Agreement_SalesPlan" Width="1.5" PointX="3.5900485234288726" PointY="15.095912001606036" />
+        <EntityTypeShape EntityType="AgreementModel.Agreement_Todo" Width="1.5" PointX="5.3055227125554918" PointY="17.895485230672865" />
+        <EntityTypeShape EntityType="AgreementModel.AgreementStatus" Width="1.5" PointX="6.9201528108306949" PointY="12.406722968633623" />
+        <EntityTypeShape EntityType="AgreementModel.ExpiryCategory" Width="1.5" PointX="5.2978391224974022" PointY="2.5429732960383284" />
+        <EntityTypeShape EntityType="AgreementModel.ExternalPerson" Width="1.5" PointX="3.7759443837105966" PointY="8.6749912689789159" />
+        <EntityTypeShape EntityType="AgreementModel.ExternalRole" Width="1.5" PointX="0.76698799467039669" PointY="25.703753915477428" />
+        <EntityTypeShape EntityType="AgreementModel.Import_SalesActual" Width="1.5" PointX="9.4408124282214843" PointY="21.370776171503017" />
+        <EntityTypeShape EntityType="AgreementModel.InternalPerson" Width="1.5" PointX="9.390726298741404" PointY="2.0159582207053703" />
+        <EntityTypeShape EntityType="AgreementModel.InternalRole" Width="1.5" PointX="4.776098858926491" PointY="19.709924870966898" />
+        <EntityTypeShape EntityType="AgreementModel.MemoType" Width="1.5" PointX="6.727129125374895" PointY="11.440509354435145" />
+        <EntityTypeShape EntityType="AgreementModel.Organisation" Width="1.5" PointX="7.9089224431239646" PointY="20.22528251457274" />
+        <EntityTypeShape EntityType="AgreementModel.RevenueDimension" Width="1.5" PointX="5.0246611298176749" PointY="27.976612923655946" />
+        <EntityTypeShape EntityType="AgreementModel.RevenueTrend" Width="1.5" PointX="4.8735299002721577" PointY="18.08133941240671" />
+        <EntityTypeShape EntityType="AgreementModel.Sector" Width="1.5" PointX="0.38783412444770066" PointY="13.522299817540823" />
+        <EntityTypeShape EntityType="AgreementModel.TodoFlag" Width="1.5" PointX="3.0046645584537952" PointY="30.477244033700433" />
+        <EntityTypeShape EntityType="AgreementModel.TodoPriority" Width="1.5" PointX="9.0302247167705669" PointY="1.7656875409957429" />
+        <EntityTypeShape EntityType="AgreementModel.TodoType" Width="1.5" PointX="7.3627138619137522" PointY="3.9920413810722724" />
+        <EntityTypeShape EntityType="AgreementModel.TowerDelivery" Width="1.5" PointX="10.912118944764192" PointY="18.656698488936154" />
+        <EntityTypeShape EntityType="AgreementModel.TowerService" Width="1.5" PointX="2.8357474556359215" PointY="24.345500286829424" />
+        <EntityTypeShape EntityType="AgreementModel.vwImportBulk" Width="1.5" PointX="6.43375482523523" PointY="30.784221603900296" />
+        <AssociationConnector Association="AgreementModel.fky_Agreement_AccountUnit_Agreement" />
+        <AssociationConnector Association="AgreementModel.fky_Agreement_AgreementStatus" />
+        <AssociationConnector Association="AgreementModel.fky_Agreement_CostActual_Agreement" />
+        <AssociationConnector Association="AgreementModel.fky_Agreement_Memo_Agreement" />
+        <AssociationConnector Association="AgreementModel.fky_Agreement_Organisation" />
+        <AssociationConnector Association="AgreementModel.fky_Agreement_ResponsibleExternal_Agreement" />
+        <AssociationConnector Association="AgreementModel.fky_Agreement_ResponsibleInternal_Agreement" />
+        <AssociationConnector Association="AgreementModel.fky_Agreement_RevenueDimension" />
+        <AssociationConnector Association="AgreementModel.fky_Agreement_RevenueTrend" />
+        <AssociationConnector Association="AgreementModel.fky_Agreement_SalesActual_Agreement" />
+        <AssociationConnector Association="AgreementModel.fky_Agreement_SalesPlan_Agreement" />
+        <AssociationConnector Association="AgreementModel.fky_Agreement_Sector" />
+        <AssociationConnector Association="AgreementModel.fky_Agreement_Todo_Agreement" />
+        <AssociationConnector Association="AgreementModel.fky_Agreement_TowerDelivery" />
+        <AssociationConnector Association="AgreementModel.fky_Agreement_TowerService" />
+        <AssociationConnector Association="AgreementModel.fky_Agreement_Memo_InternalPerson" />
+        <AssociationConnector Association="AgreementModel.fky_Agreement_Memo_MemoType" />
+        <AssociationConnector Association="AgreementModel.fky_Agreement_ResponsibleExternal_ExternalPerson" />
+        <AssociationConnector Association="AgreementModel.fky_Agreement_ResponsibleExternal_ExternalRole" />
+        <AssociationConnector Association="AgreementModel.fky_Agreement_ResponsibleInternal_InternalPerson" />
+        <AssociationConnector Association="AgreementModel.fky_Agreement_ResponsibleInternal_InternalRole" />
+        <AssociationConnector Association="AgreementModel.fky_Agreement_SalesActual_ExpiryCategory" />
+        <AssociationConnector Association="AgreementModel.fky_Agreement_Todo_InternalPerson_Assigned" />
+        <AssociationConnector Association="AgreementModel.fky_Agreement_Todo_InternalPerson_Created" />
+        <AssociationConnector Association="AgreementModel.fky_Agreement_Todo_TodoFlag" />
+        <AssociationConnector Association="AgreementModel.fky_Agreement_Todo_TodoPriority" />
+        <AssociationConnector Association="AgreementModel.fky_Agreement_Todo_TodoType" />
+        <EntityTypeShape EntityType="AgreementModel.ImportBulk" Width="1.5" PointX="1.4217628638361408" PointY="13.482447183449962" />
+        <EntityTypeShape EntityType="AgreementModel.ImportOption" Width="1.5" PointX="10.843559396846015" PointY="14.706635318094229" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
